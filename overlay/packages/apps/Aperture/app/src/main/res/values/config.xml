@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 <resources>
-    <!-- Camera 0 switches between the main (2) and ultrawide (3) sensors. -->
-    <string-array name="config_logicalZoomRatios" translatable="false">
-        <item>0</item> <item>0.6</item> <item>0.6</item>
+    <!-- Use physical ultrawide (3) and telephoto (4) alongside main camera 0. -->
+    <bool name="config_enableAuxCameras">true</bool>
+    <!-- Camera 2 duplicates the main sensor already provided by camera 0. -->
+    <string-array name="config_ignoredAuxCameraIds" translatable="false">
+        <item>2</item>
+    </string-array>
+    <!-- These auxiliary devices produce tested YUV/JPEG and video streams. -->
+    <string-array name="config_backwardCompatibleCameraIds" translatable="false">
+        <item>3</item>
+        <item>4</item>
     </string-array>
 </resources>
