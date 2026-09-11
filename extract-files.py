@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import hashlib
+import struct
+
 import extract_utils.tools
 from extract_utils.fixups_blob import (
     BlobFixupCtx,
@@ -171,6 +174,59 @@ def blob_fixup_camera_reconfiguration_query(
             f.write(patched)
 
 
+def blob_fixup_camera_output_wrapper_ownership(
+    ctx: BlobFixupCtx,
+    file: File,
+    file_path: str,
+    *args,
+    **kwargs,
+):
+    # OS3.0.306.0.WNCCNXM: MfsrPostFilter exposes one wrapper through
+    # multiple output entries. DestroyPipelineDescriptor deletes it twice.
+    # Deduplicate output pointers before the existing deletion loop.
+    # Assembly and validation notes: camera-wrapper-fix/README.md.
+    original_sha = '14c0a6ffdaba0d085d340cd1434b83b5597c76dc23899b58d929cd5d466b7900'
+    patched_sha = '12a5430267eeda2591c5b44ae4f08fe4805c2c48e84ffd26e79610d0cd95c481'
+    with open(file_path, 'rb') as stream:
+        original = stream.read()
+    digest = hashlib.sha256(original).hexdigest()
+    if digest == patched_sha:
+        return
+    if digest != original_sha:
+        raise ValueError(f'Unsupported camera.qcom.so SHA-256: {digest}')
+
+    site, cave = 0x2f8ba4, 0xef5dd0
+    stub = bytes.fromhex(
+        '6b1240b9 080080d2 090580d2 6ae20091 1f010b6b 02020054 '
+        '0c29099b 8d0140f9 6d0100b4 0e050091 df010b6b 02010054 '
+        'cf29099b f00140f9 1f020deb 41000054 ff0100f9 ce050091 '
+        'f8ffff17 08050091 f0ffff17 6b1240b9 600bd017'
+    )
+    patched = bytearray(original)
+    patched[cave:cave + len(stub)] = stub
+    struct.pack_into('<I', patched, site, 0x14000000 | ((cave - site) // 4))
+
+    phoff = struct.unpack_from('<Q', original, 32)[0]
+    phentsize, phnum = struct.unpack_from('<HH', original, 54)
+    if phentsize != 56:
+        raise ValueError('Unexpected ELF program header size')
+    for index in range(phnum):
+        pos = phoff + index * phentsize
+        kind, flags, offset, va, pa, filesz, memsz, align = struct.unpack_from('<II6Q', original, pos)
+        if kind == 1 and flags == 5 and offset == va == 0x294000:
+            if offset + filesz != cave or va + memsz != cave:
+                raise ValueError('Unexpected camera executable segment layout')
+            struct.pack_into('<QQ', patched, pos + 32, filesz + len(stub), memsz + len(stub))
+            break
+    else:
+        raise ValueError('Camera executable segment not found')
+
+    if hashlib.sha256(patched).hexdigest() != patched_sha:
+        raise ValueError('Unexpected camera patch result')
+    with open(file_path, 'wb') as stream:
+        stream.write(patched)
+
+
 blob_fixups: blob_fixups_user_type = {
     (
         'odm/etc/camera/enhance_motiontuning.xml',
@@ -192,8 +248,15 @@ blob_fixups: blob_fixups_user_type = {
     'odm/lib64/camx.device-impl.so': blob_fixup()
         .call(blob_fixup_camera_reconfiguration_query),
 
+    'odm/lib64/hw/camera.qcom.so': blob_fixup()
+        .add_needed('libprocessgroup_shim.so')
+        .replace_needed(
+            'android.hardware.graphics.allocator-V1-ndk.so',
+            'android.hardware.graphics.allocator-V2-ndk.so'
+        )
+        .call(blob_fixup_camera_output_wrapper_ownership),
+
     (
-        'odm/lib64/hw/camera.qcom.so',
         'odm/lib64/hw/com.qti.chi.override.so',
         'odm/lib64/libchifeature2.so',
     ): blob_fixup()
