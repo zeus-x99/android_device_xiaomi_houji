@@ -29,6 +29,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Radio
+PRODUCT_VENDOR_PROPERTIES += ro.vendor.radio.hangup_pending_mo=true
+
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
