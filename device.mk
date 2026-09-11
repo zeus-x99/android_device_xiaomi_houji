@@ -30,6 +30,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Overlays
+PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 PRODUCT_PACKAGES += \
     FrameworksResHouji \
     HoujiEuiccOverlay \

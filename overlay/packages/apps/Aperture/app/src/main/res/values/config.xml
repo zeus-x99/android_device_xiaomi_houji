@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <!-- Camera 0 switches between the main (2) and ultrawide (3) sensors. -->
+    <string-array name="config_logicalZoomRatios" translatable="false">
+        <item>0</item> <item>0.6</item> <item>0.6</item>
+    </string-array>
+</resources>
