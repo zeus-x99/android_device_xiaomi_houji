@@ -1098,8 +1098,8 @@ odm/lib64/camera/libchxlogicalcameratable.so
 
 # camera sensormodule - from OS2.0.200.13.VNCCNXM
 odm/lib64/camera/com.qti.sensormodule.houji_sunny_ovx9000_wide_ii.bin|3d51fcb218b940af98b9d38bdce6f60d60e88ab3
-odm/lib64/camera/com.qti.sensormodule.houji_sunny_s5kjn1_tele_ii.bin|3e88b4b54da237a24add78003c15fb031b2171df
-odm/lib64/camera/com.qti.tuned.houji_sunny_ovx9000_wide_ii.bin|b06ba8f325d510d37ba021edd387c8fddd95bc76
+odm/lib64/camera/com.qti.sensormodule.houji_sunny_s5kjn1_tele_ii.bin|1d5818468140c2dc9630bc0f94090490a631e779
+odm/lib64/camera/com.qti.tuned.houji_sunny_ovx9000_wide_ii.bin|7c8c358a334054cd2d7826ac9c5facc1a114217a
 odm/lib64/camera/com.qti.tuned.houji_sunny_s5kjn1_tele_ii.bin|4514407007beffc716dc937a1a91bb40a5d54a2d
 
 # Camera Plugins
@@ -1450,7 +1450,6 @@ odm/etc/display/qdcm_calib_data_xiaomi_n3_42_0d_0a_cmd_mode_dsc_dsi_panel.json
 odm/etc/mdss_dsi_n3_42_0d_0a_dsc_cmd_mi.xml
 
 # Euicc - from shiba-user-15-BP1A.250405.005.B1-13151136-release-keys
-product/priv-app/EuiccGoogle/EuiccGoogle.apk|c792c42ba4cd171752d7ce5516a56ecb9858dc69
 
 # Fingerprint
 odm/lib64/hw/fingerprint.goodix_fod.so:odm/lib64/hw/fingerprint.goodix_fod.default.so;FIX_SONAME
