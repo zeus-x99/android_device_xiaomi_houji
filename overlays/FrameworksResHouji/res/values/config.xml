@@ -309,11 +309,12 @@
          lux * (1.0f + CONSTRAINT_VALUE). When the current lux is higher than this threshold,
          the screen brightness is recalculated. See the config_ambientThresholdLevels
          description for how the constraint value is chosen. -->
-     <integer-array name="config_ambientBrighteningThresholds">
-        <item>2</item>
-        <item>6</item>
-        <item>10</item>
-        <item>30</item>
+    <!-- Require at least a 10% lux increase to ignore small indoor sensor fluctuations. -->
+    <integer-array name="config_ambientBrighteningThresholds">
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
+        <item>100</item>
         <item>100</item>
         <item>400</item>
         <item>600</item>
@@ -344,7 +345,7 @@
          than this threshold, it is applied. See the config_screenThresholdLevels description for
          how the constraint value is chosen. -->
     <integer-array name="config_screenBrighteningThresholds">
-        <item>0</item>
+        <item>50</item>
     </integer-array>
 
     <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
@@ -354,7 +355,7 @@
          this threshold, it is applied. See the config_screenThresholdLevels description for how
          the constraint value is chosen. -->
     <integer-array name="config_screenDarkeningThresholds">
-        <item>0</item>
+        <item>50</item>
     </integer-array>
 
     <!-- Minimum screen brightness setting allowed by power manager.
@@ -392,11 +393,11 @@
          auto-brightness adjustment setting. -->
     <fraction name="config_autoBrightnessAdjustmentMaxGamma">100.0%</fraction>
 
-    <!-- Fast brightness animation ramp rate in brightness units per second-->
-    <integer name="config_brightness_ramp_rate_fast">4932</integer>
+    <!-- Ramp rates use legacy 0-255 brightness units per second, not panel backlight units. -->
+    <integer name="config_brightness_ramp_rate_fast">180</integer>
 
     <!-- Slow brightness animation ramp rate in brightness units per second-->
-    <integer name="config_brightness_ramp_rate_slow">3946</integer>
+    <integer name="config_brightness_ramp_rate_slow">60</integer>
 
     <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
          vendors to tune the curves to have exact same brightness for different refresh rate. So
