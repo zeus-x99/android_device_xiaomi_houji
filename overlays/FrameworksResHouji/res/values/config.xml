@@ -17,12 +17,12 @@
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
     <array name="config_autoBrightnessDisplayValuesNits">
-        <item>3.0</item>
+        <item>2.0</item>
+        <item>2.5</item>
         <item>3.5</item>
-        <item>4.1</item>
-        <item>17.9</item>
-        <item>27.2</item>
-        <item>31.5</item>
+        <item>10.0</item>
+        <item>20.0</item>
+        <item>29.0</item>
         <item>37.0</item>
         <item>50.0</item>
         <item>65.0</item>
@@ -397,7 +397,7 @@
     <integer name="config_brightness_ramp_rate_fast">180</integer>
 
     <!-- Slow brightness animation ramp rate in brightness units per second-->
-    <integer name="config_brightness_ramp_rate_slow">20</integer>
+    <integer name="config_brightness_ramp_rate_slow">15</integer>
 
     <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
          vendors to tune the curves to have exact same brightness for different refresh rate. So
