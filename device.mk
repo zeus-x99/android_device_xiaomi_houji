@@ -34,6 +34,8 @@ PRODUCT_VENDOR_PROPERTIES += ro.vendor.radio.hangup_pending_mo=true
 
 # Add an on-demand FOD wake sensor through the supplementary ODM HAL list.
 PRODUCT_PACKAGES += sensors.xiaomi.v2
+
+PRODUCT_VENDOR_PROPERTIES += ro.vendor.fingerprint.lhbm_ready_event=true
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.sensors.xiaomi.udfps=true \
     ro.vendor.sensors.xiaomi.udfps.touchfeature=true \

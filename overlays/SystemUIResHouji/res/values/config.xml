@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- The optical FOD pulse already uses normal display brightness. -->
+    <bool name="config_udfpsSkipDozeBrightnessOverride">true</bool>
+    <bool name="config_udfpsRefreshRateBeforePointerDown">true</bool>
+
     <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
     vibrator is capable of subtle vibrations -->
     <bool name="config_vibrateOnIconAnimation">true</bool>
