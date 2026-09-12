@@ -25,3 +25,8 @@
 ![Xiaomi 14](https://www.giztop.com/media/catalog/product/cache/dc206057cdd42d7e34b9d36e347785ca/p/m/pms_1698307643.47369771.png)
 ![Xiaomi 14](https://www.giztop.com/media/catalog/product/cache/dc206057cdd42d7e34b9d36e347785ca/p/m/pms_1698307643.50924527.png)
 ![Xiaomi 14](https://www.giztop.com/media/catalog/product/cache/dc206057cdd42d7e34b9d36e347785ca/p/m/pms_1698307643.55548339.png)
+## LineageOS 24 development snapshot
+
+See [integration/README.md](integration/README.md) for the pinned source manifest,
+framework/Settings/build patches, validation limits and separate unflashed kernel
+experiments accompanying the houji CN repairs.

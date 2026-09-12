@@ -1,0 +1,22 @@
+[
+  {
+    "path": "frameworks/base",
+    "base": "198fa72864710315a791ca620ffb2f6c823b6054",
+    "patch": "frameworks-base.patch"
+  },
+  {
+    "path": "packages/apps/Settings",
+    "base": "213829fb67f5e070029e0513a088f31bc8f5c1ed",
+    "patch": "packages-apps-Settings.patch"
+  },
+  {
+    "path": "build/make",
+    "base": "975ad845e6701d32154234d74b258ddb92165afd",
+    "patch": "build-make.patch"
+  },
+  {
+    "path": "build/soong",
+    "base": "5ea236479501d50a4a0eafb568f4f35d1bdda3cb",
+    "patch": "build-soong.patch"
+  }
+]

@@ -1,0 +1,213 @@
+diff --git a/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41-i2c.c b/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41-i2c.c
+index 6785958..871b06a 100644
+--- a/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41-i2c.c
++++ b/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41-i2c.c
+@@ -33,7 +33,7 @@
+ 
+ #include "wm_adsp.h"
+ #include "cs35l41.h"
+-#include <sound/cs35l41.h>
++#include <uapi/audio/sound/cs35l41.h>
+ 
+ static struct regmap_config cs35l41_regmap_i2c = {
+ 	.reg_bits = 32,
+diff --git a/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41-spi.c b/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41-spi.c
+index 26200e7..18be0d2 100644
+--- a/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41-spi.c
++++ b/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41-spi.c
+@@ -28,7 +28,7 @@
+ 
+ #include "wm_adsp.h"
+ #include "cs35l41.h"
+-#include <sound/cs35l41.h>
++#include <uapi/audio/sound/cs35l41.h>
+ 
+ static struct regmap_config cs35l41_regmap_spi = {
+ 	.reg_bits = 32,
+diff --git a/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41.c b/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41.c
+index eb79b29..bcec75d 100644
+--- a/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41.c
++++ b/qcom/opensource/audio-kernel/asoc/codecs/cs35l41/cs35l41.c
+@@ -48,7 +48,7 @@
+ 
+ #include "wm_adsp.h"
+ #include "cs35l41.h"
+-#include <sound/cs35l41.h>
++#include <uapi/audio/sound/cs35l41.h>
+ 
+ #if IS_ENABLED(CONFIG_MIEV)
+ #include <miev/mievent.h>
+diff --git a/qcom/opensource/touch-drivers/Kbuild b/qcom/opensource/touch-drivers/Kbuild
+index 3be1cc1..fb3816b 100644
+--- a/qcom/opensource/touch-drivers/Kbuild
++++ b/qcom/opensource/touch-drivers/Kbuild
+@@ -24,7 +24,7 @@ endif
+ ifeq ($(CONFIG_ARCH_PINEAPPLE), y)
+ 	ifeq ($(CONFIG_TARGET_PRODUCT_HOUJI), y)
+ 		include $(TOUCH_ROOT)/config/gki_houjitouch.conf
+-		LINUX_INC += -include $(TOUCH_ROOT)/config/gki_houjitouchconf.h
++		LINUX_INC += -include $(TOUCH_ROOT)/config/gki_houjitouch.h
+ 	else ifeq ($(CONFIG_TARGET_PRODUCT_SHENNONG), y)
+ 		include $(TOUCH_ROOT)/config/gki_shennongtouch.conf
+ 		LINUX_INC += -include $(TOUCH_ROOT)/config/gki_shennongtouchconf.h
+@@ -319,13 +319,13 @@ ifeq ($(CONFIG_TOUCHSCREEN_XIAOMI_TOUCHFEATURE), y)
+ 			LINUX_INC += -include $(TOUCH_ROOT)/xiaomi/xiaomi_touch_type_common.h
+ 
+ 			xiaomi_touch-y := \
+-								./xiaomi/xiaomi_touch_knock_data.o 
+-								./xiaomi/xiaomi_touch_core.o 
+-								./xiaomi/xiaomi_touch_proc.o 
+-								./xiaomi/xiaomi_touch_operations.o 
+-								./xiaomi/xiaomi_touch_sys.o 
+-								./xiaomi/xiaomi_touch_mode.o 
+-								./xiaomi/xiaomi_touch_evdev.o 
++								./xiaomi/xiaomi_touch_knock_data.o \
++								./xiaomi/xiaomi_touch_core.o \
++								./xiaomi/xiaomi_touch_proc.o \
++								./xiaomi/xiaomi_touch_operations.o \
++								./xiaomi/xiaomi_touch_sys.o \
++								./xiaomi/xiaomi_touch_mode.o \
++								./xiaomi/xiaomi_touch_evdev.o \
+ 								./xiaomi/xiaomi_touch_device.o
+ 
+ 			obj-$(CONFIG_MSM_TOUCH) += xiaomi_touch.o
+diff --git a/qcom/opensource/touch-drivers/synaptics_tcm2/syna_tcm2.c b/qcom/opensource/touch-drivers/synaptics_tcm2/syna_tcm2.c
+index 0368c01..eb01859 100644
+--- a/qcom/opensource/touch-drivers/synaptics_tcm2/syna_tcm2.c
++++ b/qcom/opensource/touch-drivers/synaptics_tcm2/syna_tcm2.c
+@@ -743,7 +743,7 @@ static int syna_dev_check_input_params(struct syna_tcm *tcm)
+  * @return
+  *    on success, 0; otherwise, negative value on error.
+  */
+-static int syna_dev_set_up_input_device(struct syna_tcm *tcm)
++static int __maybe_unused syna_dev_set_up_input_device(struct syna_tcm *tcm)
+ {
+ 	int retval = 0;
+ 
+diff --git a/qcom/opensource/touch-drivers/synaptics_tcm2/syna_xiaomi_driver.c b/qcom/opensource/touch-drivers/synaptics_tcm2/syna_xiaomi_driver.c
+index e5c1496..272239e 100644
+--- a/qcom/opensource/touch-drivers/synaptics_tcm2/syna_xiaomi_driver.c
++++ b/qcom/opensource/touch-drivers/synaptics_tcm2/syna_xiaomi_driver.c
+@@ -1,3 +1,4 @@
++#include <linux/spi/spi.h>
+ #include <linux/soc/qcom/panel_event_notifier.h>
+ #include "syna_tcm2.h"
+ #include "syna_xiaomi_driver.h"
+diff --git a/qcom/opensource/video-driver/driver/variant/iris2/inc/hfi_buffer_iris2.h b/qcom/opensource/video-driver/driver/variant/iris2/inc/hfi_buffer_iris2.h
+index 612d742..f792526 100644
+--- a/qcom/opensource/video-driver/driver/variant/iris2/inc/hfi_buffer_iris2.h
++++ b/qcom/opensource/video-driver/driver/variant/iris2/inc/hfi_buffer_iris2.h
+@@ -19,6 +19,9 @@ typedef s32     HFI_S32;
+ typedef u64     HFI_U64;
+ typedef HFI_U32 HFI_BOOL;
+ 
++#define HFI_MAX(a, b) (((a) > (b)) ? (a) : (b))
++#define HFI_MIN(a, b) (((a) < (b)) ? (a) : (b))
++
+ #define HFI_ALIGNMENT_4096 (4096)
+ 
+ #define BUF_SIZE_ALIGN_16 (16)
+@@ -308,7 +311,7 @@ typedef HFI_U32 HFI_BOOL;
+ 		HFI_ALIGN(opb_wr_top_line_luma_buffer_size, \
+ 		VENUS_DMA_ALIGNMENT) + (MAX_TILE_COLUMNS - 1) * 256; \
+ 		opb_wr_top_line_luma_buffer_size = \
+-		MAX(opb_wr_top_line_luma_buffer_size, (32 * \
++		HFI_MAX(opb_wr_top_line_luma_buffer_size, (32 * \
+ 			HFI_ALIGN(frame_height, 8))); \
+ 		opb_wr_top_line_chroma_buffer_size = \
+ 			opb_wr_top_line_luma_buffer_size;\
+@@ -368,7 +371,7 @@ typedef HFI_U32 HFI_BOOL;
+ 	do { \
+ 		HFI_U32 _height = HFI_ALIGN(frame_height, \
+ 				BUFFER_ALIGNMENT_32_BYTES);  \
+-		_size = MIN((((_height + 15) >> 4) * 48), H264D_MAX_SLICE) *\
++		_size = HFI_MIN((((_height + 15) >> 4) * 48), H264D_MAX_SLICE) *\
+ 					  SIZE_H264D_BSE_CMD_PER_BUF; \
+ 	} while (0)
+ 
+@@ -376,7 +379,7 @@ typedef HFI_U32 HFI_BOOL;
+ 	do { \
+ 		HFI_U32 _height = HFI_ALIGN(frame_height, \
+ 				BUFFER_ALIGNMENT_32_BYTES); \
+-		_size = MIN((((_height + 15) >> 4) * 48), H264D_MAX_SLICE) * \
++		_size = HFI_MIN((((_height + 15) >> 4) * 48), H264D_MAX_SLICE) * \
+ 					SIZE_H264D_VPP_CMD_PER_BUF; \
+ 		if (_size > VPP_CMD_MAX_SIZE) { \
+ 			_size = VPP_CMD_MAX_SIZE; \
+@@ -535,9 +538,9 @@ typedef HFI_U32 HFI_BOOL;
+ 	((LCU_MAX_SIZE_PELS / 8 * (128 / 8)) * ((frame_width + 15) >> 4))
+ 
+ #define SIZE_H265D_LB_SE_LEFT_CTRL(frame_width, frame_height)    \
+-	(MAX(((frame_height + 16 - 1) / 8) * \
++	(HFI_MAX(((frame_height + 16 - 1) / 8) * \
+ 		MAX_SE_NBR_CTRL_LCU16_LINE_BUFFER_SIZE,     \
+-	MAX(((frame_height + 32 - 1) / 8) * \
++	HFI_MAX(((frame_height + 32 - 1) / 8) * \
+ 		MAX_SE_NBR_CTRL_LCU32_LINE_BUFFER_SIZE, \
+ 	((frame_height + 64 - 1) / 8) * \
+ 		MAX_SE_NBR_CTRL_LCU64_LINE_BUFFER_SIZE)))
+@@ -564,7 +567,7 @@ typedef HFI_U32 HFI_BOOL;
+ 		LCU_MAX_SIZE_PELS) / LCU_MIN_SIZE_PELS) * \
+ 		(HFI_ALIGN(frame_height, LCU_MAX_SIZE_PELS) /\
+ 		LCU_MIN_SIZE_PELS)) * NUM_HW_PIC_BUF, VENUS_DMA_ALIGNMENT);  \
+-		_size = MIN(_size, H265D_MAX_SLICE + 1);          \
++		_size = HFI_MIN(_size, H265D_MAX_SLICE + 1);          \
+ 		_size = 2 * _size * SIZE_H265D_BSE_CMD_PER_BUF;     \
+ 	} while (0)
+ 
+@@ -574,7 +577,7 @@ typedef HFI_U32 HFI_BOOL;
+ 		LCU_MIN_SIZE_PELS) * (HFI_ALIGN(frame_height, \
+ 		LCU_MAX_SIZE_PELS) / LCU_MIN_SIZE_PELS)) * \
+ 		NUM_HW_PIC_BUF, VENUS_DMA_ALIGNMENT);  \
+-		_size = MIN(_size, H265D_MAX_SLICE + 1);    \
++		_size = HFI_MIN(_size, H265D_MAX_SLICE + 1);    \
+ 		_size = HFI_ALIGN(_size, 4);  \
+ 		_size = 2 * _size * SIZE_H265D_VPP_CMD_PER_BUF; \
+ 		if (_size > VPP_CMD_MAX_SIZE) { \
+@@ -705,9 +708,9 @@ typedef HFI_U32 HFI_BOOL;
+ 	VENUS_DMA_ALIGNMENT))
+ 
+ #define SIZE_VPXD_LB_FE_LEFT_CTRL(frame_width, frame_height)   \
+-	MAX(((frame_height + 15) >> 4) * \
++	HFI_MAX(((frame_height + 15) >> 4) * \
+ 	MAX_FE_NBR_CTRL_LCU16_LINE_BUFFER_SIZE, \
+-	MAX(((frame_height + 31) >> 5) * \
++	HFI_MAX(((frame_height + 31) >> 5) * \
+ 	MAX_FE_NBR_CTRL_LCU32_LINE_BUFFER_SIZE, \
+ 	((frame_height + 63) >> 6) * MAX_FE_NBR_CTRL_LCU64_LINE_BUFFER_SIZE))
+ #define SIZE_VPXD_LB_FE_TOP_CTRL(frame_width, frame_height) \
+@@ -715,9 +718,9 @@ typedef HFI_U32 HFI_BOOL;
+ #define SIZE_VPXD_LB_SE_TOP_CTRL(frame_width, frame_height) \
+ 	(((frame_width + 15) >> 4) * MAX_FE_NBR_CTRL_LCU16_LINE_BUFFER_SIZE)
+ #define SIZE_VPXD_LB_SE_LEFT_CTRL(frame_width, frame_height)  \
+-	MAX(((frame_height + 15) >> 4) * \
++	HFI_MAX(((frame_height + 15) >> 4) * \
+ 	MAX_SE_NBR_CTRL_LCU16_LINE_BUFFER_SIZE,\
+-	MAX(((frame_height + 31) >> 5) * \
++	HFI_MAX(((frame_height + 31) >> 5) * \
+ 	MAX_SE_NBR_CTRL_LCU32_LINE_BUFFER_SIZE, \
+ 	((frame_height + 63) >> 6) * MAX_SE_NBR_CTRL_LCU64_LINE_BUFFER_SIZE))
+ #define SIZE_VPXD_LB_RECON_DMA_METADATA_WR(frame_width, frame_height) \
+@@ -789,11 +792,11 @@ typedef HFI_U32 HFI_BOOL;
+ 		BUFFER_ALIGNMENT_16_BYTES) *\
+ 		HFI_ALIGN(frame_height, BUFFER_ALIGNMENT_16_BYTES) * 3 / 2;  \
+ 		if (!is_interlaced) { \
+-			_size = HFI_ALIGN(((MAX(_size_yuv, \
++			_size = HFI_ALIGN(((HFI_MAX(_size_yuv, \
+ 			((BIN_BUFFER_THRESHOLD * 3) >> 1)) * \
+ 			VPX_DECODER_FRAME_BIN_HDR_BUDGET_RATIO * \
+ 			VPX_DECODER_FRAME_CONCURENCY_LVL) / num_vpp_pipes), \
+-			VENUS_DMA_ALIGNMENT) + HFI_ALIGN(((MAX(_size_yuv, \
++			VENUS_DMA_ALIGNMENT) + HFI_ALIGN(((HFI_MAX(_size_yuv, \
+ 			((BIN_BUFFER_THRESHOLD * 3) >> 1)) * \
+ 			VPX_DECODER_FRAME_BIN_RES_BUDGET_RATIO * \
+ 			VPX_DECODER_FRAME_CONCURENCY_LVL) / num_vpp_pipes), \
+@@ -1199,7 +1202,7 @@ _yuv_bufcount_min, is_opb, num_vpp_pipes)           \
+ #define SIZE_VPSS_LINE_BUF(num_vpp_pipes_enc, frame_height_coded, \
+ 			frame_width_coded) \
+ 	(HFI_ALIGN(((((((8192) >> 2) << 5) * (num_vpp_pipes_enc)) + 64) + \
+-	(((((MAX((frame_width_coded), (frame_height_coded)) + 3) >> 2) << 5) +\
++	(((((HFI_MAX((frame_width_coded), (frame_height_coded)) + 3) >> 2) << 5) +\
+ 	256) * 16)), VENUS_DMA_ALIGNMENT))
+ 
+ #define SIZE_TOP_LINE_BUF_FIRST_STG_SAO(frame_width_coded) \

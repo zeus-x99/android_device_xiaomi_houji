@@ -1,0 +1,43 @@
+diff --git a/drivers/power/supply/qti_battery_charger.c b/drivers/power/supply/qti_battery_charger.c
+index 0efb7882c..363597692 100644
+--- a/drivers/power/supply/qti_battery_charger.c
++++ b/drivers/power/supply/qti_battery_charger.c
+@@ -9971,6 +9971,8 @@ static void xm_charger_debug_info_print_work(struct work_struct *work)
+ 
+ static int battery_chg_parse_dt(struct battery_chg_dev *bcdev)
+ {
++	int rc, i, len;
++	u32 val, prev;
+ 	struct device_node *node = bcdev->dev->of_node;
+ 	struct psy_state *pst = &bcdev->psy_list[PSY_TYPE_BATTERY];
+ 
+diff --git a/drivers/usb/dwc3/dwc3-msm-core.c b/drivers/usb/dwc3/dwc3-msm-core.c
+index 197705a70..d53c6678d 100644
+--- a/drivers/usb/dwc3/dwc3-msm-core.c
++++ b/drivers/usb/dwc3/dwc3-msm-core.c
+@@ -6818,6 +6818,13 @@ static int dwc3_msm_host_notifier(struct notifier_block *nb,
+ 	if (event != USB_DEVICE_ADD && event != USB_DEVICE_REMOVE)
+ 		return NOTIFY_DONE;
+ 
++	if (!dwc || !dwc->xhci)
++		return NOTIFY_DONE;
++
++	hcd = platform_get_drvdata(dwc->xhci);
++	if (!hcd)
++		return NOTIFY_DONE;
++
+ 	/*
+ 	 * If the USB device's bus does not match either the primary HCD's
+ 	 * bus or the shared HCD's bus, bail out.
+diff --git a/include/linux/ipa_usb.h b/include/linux/ipa_usb.h
+index be760b750..f741e6b50 100644
+--- a/include/linux/ipa_usb.h
++++ b/include/linux/ipa_usb.h
+@@ -17,6 +17,7 @@ enum ipa_usb_teth_prot {
+ 	IPA_USB_MBIM = 3,
+ 	IPA_USB_DIAG = 4,
+ 	IPA_USB_RMNET_CV2X = 5,
++	IPA_USB_NCM = 6,
+ 	IPA_USB_MAX_TETH_PROT_SIZE
+ };
+ 

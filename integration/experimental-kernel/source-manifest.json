@@ -1,0 +1,16 @@
+{
+  "sm8650": {
+    "commit": "24dd31e4b1fecb6f82a6c82fa456d585f37c3551",
+    "origin": "https://github.com/lolipuru/android_kernel_xiaomi_sm8650.git"
+  },
+  "sm8650-modules": {
+    "commit": "4a31d6ee77b27c1b93d329de7bf4cbe16e699599",
+    "origin": "https://github.com/lolipuru/kernel_xiaomi_sm8650-modules.git"
+  },
+  "sm8650-devicetrees": {
+    "commit": "2675a05b30296e05bee91bfd1a86550e21b973fd",
+    "origin": "https://github.com/lolipuru/kernel_xiaomi_sm8650-devicetrees.git"
+  },
+  "toolchain": "android14-6.1/prebuilts/clang/host/linux-x86/clang-r487747c",
+  "kernel_release": "6.1.130-g24dd31e4b1fe-dirty"
+}

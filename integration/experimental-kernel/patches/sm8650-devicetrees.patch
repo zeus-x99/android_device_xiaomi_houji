@@ -1,0 +1,118 @@
+diff --git a/qcom/audio/xiaomi-sm8650-common.dtsi b/qcom/audio/xiaomi-sm8650-common.dtsi
+index 6ceda20..d88403b 100644
+--- a/qcom/audio/xiaomi-sm8650-common.dtsi
++++ b/qcom/audio/xiaomi-sm8650-common.dtsi
+@@ -1,62 +1,54 @@
+ #include "pineapple-audio-overlay.dtsi"
+ 
+-&pri_mi2s_pinctrl {
++&cdc_pri_mi2s_gpios {
+ 	status = "disabled";
+ };
+ 
+-&fm_i2s1_pinctrl {
++&fm_i2s1_gpios {
+ 	status = "disabled";
+ };
+ 
+-&sec_tdm_pinctrl {
++&cdc_tert_mi2s_gpios {
+ 	status = "disabled";
+ };
+ 
+-&tert_mi2s_pinctrl {
++&cdc_quat_mi2s_gpios {
+ 	status = "disabled";
+ };
+ 
+-&quat_mi2s_pinctrl {
++&cdc_quin_mi2s_gpios {
+ 	status = "disabled";
+ };
+ 
+-&quin_mi2s_pinctrl {
++&cdc_sen_mi2s_gpios {
+ 	status = "disabled";
+ };
+ 
+-&sen_mi2s_pinctrl {
++&cdc_sep_mi2s_gpios {
+ 	status = "disabled";
+ };
+ 
+-&sep_mi2s_pinctrl {
++&wsa_swr_gpios {
+ 	status = "disabled";
+ };
+ 
+-&quin_pcm_pinctrl {
++&wsa2_swr_gpios {
+ 	status = "disabled";
+ };
+ 
+-&wsa_swr_clk_data_pinctrl {
++&cdc_dmic01_gpios {
+ 	status = "disabled";
+ };
+ 
+-&wsa2_swr_clk_data_pinctrl {
++&cdc_dmic23_gpios {
+ 	status = "disabled";
+ };
+ 
+-&cdc_dmic01_pinctrl {
++&cdc_dmic45_gpios {
+ 	status = "disabled";
+ };
+ 
+-&cdc_dmic23_pinctrl {
+-	status = "disabled";
+-};
+-
+-&cdc_dmic45_pinctrl {
+-	status = "disabled";
+-};
+-
+-&cdc_dmic67_pinctrl {
++&cdc_dmic67_gpios {
+ 	status = "disabled";
+ };
+ 
+diff --git a/qcom/houji-pinctrl.dtsi b/qcom/houji-pinctrl.dtsi
+index fcee716..323e53a 100644
+--- a/qcom/houji-pinctrl.dtsi
++++ b/qcom/houji-pinctrl.dtsi
+@@ -126,3 +126,33 @@
+ 		};
+ 	}; //wifi
+ }; //tlmm
++
++/* UART audio switch states from the houji prebuilt DTBO. */
++&tlmm {
++	sbu_uart_en_ctrl {
++		sbu_uart_en_idle: uart_audio_en_idle {
++			mux {
++				function = "gpio";
++				pins = "gpio53";
++			};
++			config {
++				output-low;
++				bias-pull-down;
++				drive-strength = <2>;
++				pins = "gpio53";
++			};
++		};
++		sbu_uart_en_active: uart_audio_en_active {
++			mux {
++				function = "gpio";
++				pins = "gpio53";
++			};
++			config {
++				output-high;
++				bias-disable;
++				drive-strength = <2>;
++				pins = "gpio53";
++			};
++		};
++	};
++};

@@ -1,0 +1,2322 @@
+diff --git a/packages/SystemUI/res/drawable/ic_qs_brightness_auto_off.xml b/packages/SystemUI/res/drawable/ic_qs_brightness_auto_off.xml
+new file mode 100644
+index 000000000..b7385b2b1
+--- /dev/null
++++ b/packages/SystemUI/res/drawable/ic_qs_brightness_auto_off.xml
+@@ -0,0 +1,55 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2022 Paranoid Android
++
++     Licensed under the Apache License, Version 2.0 (the "License");
++     you may not use this file except in compliance with the License.
++     You may obtain a copy of the License at
++
++          http://www.apache.org/licenses/LICENSE-2.0
++
++     Unless required by applicable law or agreed to in writing, software
++     distributed under the License is distributed on an "AS IS" BASIS,
++     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++     See the License for the specific language governing permissions and
++     limitations under the License.
++-->
++<vector
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:viewportWidth="24"
++    android:viewportHeight="24">
++    <path
++        android:name="sun"
++        android:pathData="M 20 8.69 L 20 4 L 15.31 4 L 12 0.69 L 8.69 4 L 4 4 L 4 8.69 L 0.69 12 L 4 15.31 L 4 20 L 8.69 20 L 12 23.31 L 15.31 20 L 20 20 L 20 15.31 L 23.31 12 L 20 8.69 Z M 18 14.48 L 18 18 L 14.48 18 L 12 20.48 L 9.52 18 L 6 18 L 6 14.48 L 3.52 12 L 6 9.52 L 6 6 L 9.52 6 L 12 3.52 L 14.48 6 L 18 6 L 18 9.52 L 20.48 12 L 18 14.48 Z"
++        android:fillColor="#ffffff" />
++    <group android:name="mask_group">
++        <clip-path
++            android:name="mask"
++            android:pathData="M 18 14.48 L 18 18 L 14.48 18 L 12 20.48 L 9.52 18 L 6 18 L 6 14.48 L 3.52 12 L 6 9.52 L 6 6 L 9.52 6 L 12 3.52 L 14.48 6 L 18 6 L 18 9.52 L 20.48 12 L 18 14.48 Z"/>
++        <group
++            android:name="auto_transform"
++            android:pivotX="12"
++            android:pivotY="12"
++            android:translateX="-24"
++            android:scaleX="0.5"
++            android:scaleY="0.5">
++            <path
++                android:name="auto"
++                android:pathData="M 11 7 L 7.8 16 L 9.7 16 L 10.4 14 L 13.6 14 L 14.3 16 L 16.2 16 L 13 7 L 11 7 Z M 12 9 L 13.15 12.65 L 10.85 12.65 L 12 9 Z"
++                android:fillColor="#ffffff" />
++        </group>
++        <group
++            android:name="manual_transform"
++            android:pivotX="12"
++            android:pivotY="12"
++            android:translateX="0"
++            android:scaleX="1"
++            android:scaleY="1">
++            <path
++                android:name="manual"
++                android:pathData="M 11.994 13.159 L 10.159 7.007 L 7.929 7.007 L 7.929 16 L 9.678 16 L 9.678 12.936 L 9.56 9.809 L 11.314 16 L 12.667 16 L 14.427 9.809 L 14.31 12.936 L 14.31 16 L 16.052 16 L 16.052 7.007 L 13.822 7.007 L 11.994 13.159 Z"
++                android:fillColor="#ffffff" />
++        </group>
++    </group>
++</vector>
+diff --git a/packages/SystemUI/res/drawable/ic_qs_brightness_auto_on.xml b/packages/SystemUI/res/drawable/ic_qs_brightness_auto_on.xml
+new file mode 100644
+index 000000000..71ec52aef
+--- /dev/null
++++ b/packages/SystemUI/res/drawable/ic_qs_brightness_auto_on.xml
+@@ -0,0 +1,56 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (C) 2022 Paranoid Android
++
++     Licensed under the Apache License, Version 2.0 (the "License");
++     you may not use this file except in compliance with the License.
++     You may obtain a copy of the License at
++
++          http://www.apache.org/licenses/LICENSE-2.0
++
++     Unless required by applicable law or agreed to in writing, software
++     distributed under the License is distributed on an "AS IS" BASIS,
++     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++     See the License for the specific language governing permissions and
++     limitations under the License.
++-->
++<vector
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
++    android:width="24dp"
++    android:height="24dp"
++    android:viewportWidth="24"
++    android:viewportHeight="24">
++    <path
++        android:name="sun"
++        android:pathData="M 20 8.69 L 20 4 L 15.31 4 L 12 0.69 L 8.69 4 L 4 4 L 4 8.69 L 0.69 12 L 4 15.31 L 4 20 L 8.69 20 L 12 23.31 L 15.31 20 L 20 20 L 20 15.31 L 23.31 12 L 20 8.69 Z M 18 14.48 L 18 18 L 14.48 18 L 12 20.48 L 9.52 18 L 6 18 L 6 14.48 L 3.52 12 L 6 9.52 L 6 6 L 9.52 6 L 12 3.52 L 14.48 6 L 18 6 L 18 9.52 L 20.48 12 L 18 14.48 Z"
++        android:fillColor="#ffffff" />
++    <group android:name="mask_group">
++        <clip-path
++            android:name="mask"
++            android:pathData="M 18 14.48 L 18 18 L 14.48 18 L 12 20.48 L 9.52 18 L 6 18 L 6 14.48 L 3.52 12 L 6 9.52 L 6 6 L 9.52 6 L 12 3.52 L 14.48 6 L 18 6 L 18 9.52 L 20.48 12 L 18 14.48 Z"/>
++        <group
++            android:name="auto_transform"
++            android:pivotX="12"
++            android:pivotY="12"
++            android:translateX="0"
++            android:scaleX="1"
++            android:scaleY="1">
++            <path
++                android:name="auto"
++                android:pathData="M 11 7 L 7.8 16 L 9.7 16 L 10.4 14 L 13.6 14 L 14.3 16 L 16.2 16 L 13 7 L 11 7 Z M 12 9 L 13.15 12.65 L 10.85 12.65 L 12 9 Z"
++                android:fillColor="#ffffff" />
++        </group>
++        <group
++            android:name="manual_transform"
++            android:pivotX="12"
++            android:pivotY="12"
++            android:translateX="-24"
++            android:scaleX="0.5"
++            android:scaleY="0.5">
++            <path
++                android:name="manual"
++                android:pathData="M 11.994 13.159 L 10.159 7.007 L 7.929 7.007 L 7.929 16 L 9.678 16 L 9.678 12.936 L 9.56 9.809 L 11.314 16 L 12.667 16 L 14.427 9.809 L 14.31 12.936 L 14.31 16 L 16.052 16 L 16.052 7.007 L 13.822 7.007 L 11.994 13.159 Z"
++                android:fillColor="#ffffff" />
++        </group>
++    </group>
++</vector>
+diff --git a/packages/SystemUI/res/layout/status_bar.xml b/packages/SystemUI/res/layout/status_bar.xml
+index e0912a896..9db6d9b95 100644
+--- a/packages/SystemUI/res/layout/status_bar.xml
++++ b/packages/SystemUI/res/layout/status_bar.xml
+@@ -165,4 +165,25 @@
+         </FrameLayout>
+     </LinearLayout>
+ 
++    <com.android.keyguard.AlphaOptimizedLinearLayout
++        android:id="@+id/centered_area"
++        android:gravity="center"
++        android:orientation="horizontal"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:paddingTop="@dimen/status_bar_padding_top"
++        >
++        <com.android.systemui.statusbar.policy.Clock
++            android:id="@+id/clock_center"
++            android:textAppearance="@style/TextAppearance.StatusBar.Default"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:minHeight="@dimen/status_bar_icon_container_height"
++            android:layout_gravity="center_vertical"
++            android:singleLine="true"
++            android:gravity="center"
++            android:visibility="gone"
++        />
++    </com.android.keyguard.AlphaOptimizedLinearLayout>
++
+ </com.android.systemui.statusbar.phone.PhoneStatusBarView>
+diff --git a/packages/SystemUI/res/layout/system_icons.xml b/packages/SystemUI/res/layout/system_icons.xml
+index 4d5ffc579..65648cb4e 100644
+--- a/packages/SystemUI/res/layout/system_icons.xml
++++ b/packages/SystemUI/res/layout/system_icons.xml
+@@ -33,4 +33,24 @@
+         android:gravity="center_vertical"
+         android:orientation="horizontal"/>
+ 
++    <com.android.keyguard.AlphaOptimizedLinearLayout
++        android:id="@+id/right_clock_layout"
++        android:layout_width="wrap_content"
++        android:layout_height="match_parent"
++        android:orientation="horizontal"
++        >
++        <com.android.systemui.statusbar.policy.Clock
++            android:id="@+id/clock_right"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:minHeight="@dimen/status_bar_icon_container_height"
++            android:layout_gravity="center_vertical"
++            android:textAppearance="@style/TextAppearance.StatusBar.Default"
++            android:singleLine="true"
++            android:paddingStart="@dimen/status_bar_clock_starting_padding"
++            android:paddingEnd="@dimen/status_bar_clock_end_padding"
++            android:gravity="center_vertical"
++            android:visibility="gone"
++        />
++    </com.android.keyguard.AlphaOptimizedLinearLayout>
+ </LinearLayout>
+diff --git a/packages/SystemUI/res/values/cm_strings.xml b/packages/SystemUI/res/values/cm_strings.xml
+index 27a0b501a..7ff9ff7c1 100644
+--- a/packages/SystemUI/res/values/cm_strings.xml
++++ b/packages/SystemUI/res/values/cm_strings.xml
+@@ -73,6 +73,9 @@
+     <string name="vpn_credentials_password">Password</string>
+     <string name="vpn_credentials_dialog_connect">Connect</string>
+ 
++    <!-- QS button to enable adaptive brightness -->
++    <string name="accessibility_adaptive_brightness">Adaptive brightness</string>
++
+     <!-- Name of the firewall status bar icon. -->
+     <string name="status_bar_firewall">Firewall</string>
+     <string name="status_bar_firewall_slot" translatable="false">firewall</string>
+diff --git a/packages/SystemUI/res/values/config.xml b/packages/SystemUI/res/values/config.xml
+index 140bb805a..0c59cfba0 100644
+--- a/packages/SystemUI/res/values/config.xml
++++ b/packages/SystemUI/res/values/config.xml
+@@ -692,6 +692,12 @@
+     <!-- Whether notification header should never show section headers. -->
+     <bool name="config_notification_never_show_section_headers">false</bool>
+ 
++    <!-- Opt in only when an optical UDFPS pulse already uses normal screen brightness.
++         Avoid applying a lower doze brightness again during authenticated unlock. -->
++    <bool name="config_udfpsSkipDozeBrightnessOverride">false</bool>
++    <!-- Submit the UDFPS refresh-rate vote before calling a HAL that waits for the panel. -->
++    <bool name="config_udfpsRefreshRateBeforePointerDown">false</bool>
++
+     <!-- Default udfps icon. Same path as ic_fingerprint.xml -->
+     <string name="config_udfpsIcon" translatable="false">
+         M25.5,16.3283C28.47,14.8433 31.9167,14 35.5834,14C39.2501,14 42.6968,14.8433 45.6668,16.3283
+diff --git a/packages/SystemUI/shared/src/com/android/systemui/shared/recents/ISystemUiProxy.aidl b/packages/SystemUI/shared/src/com/android/systemui/shared/recents/ISystemUiProxy.aidl
+index 1f6bcbcc6..142438710 100644
+--- a/packages/SystemUI/shared/src/com/android/systemui/shared/recents/ISystemUiProxy.aidl
++++ b/packages/SystemUI/shared/src/com/android/systemui/shared/recents/ISystemUiProxy.aidl
+@@ -207,5 +207,10 @@ interface ISystemUiProxy {
+      */
+     oneway void onOverviewHidden(int displayId) = 62;
+ 
+-    // Next id = 63
++    /**
++     * Handles a double-tap sleep gesture from the launcher workspace.
++     */
++    oneway void onSleepEvent(in MotionEvent event) = 63;
++
++    // Next id = 64
+ }
+diff --git a/packages/SystemUI/src/com/android/systemui/LauncherProxyService.java b/packages/SystemUI/src/com/android/systemui/LauncherProxyService.java
+index dc3355082..ee643bf94 100644
+--- a/packages/SystemUI/src/com/android/systemui/LauncherProxyService.java
++++ b/packages/SystemUI/src/com/android/systemui/LauncherProxyService.java
+@@ -64,6 +64,7 @@ import android.os.IBinder;
+ import android.os.IRemoteCallback;
+ import android.os.Looper;
+ import android.os.PatternMatcher;
++import android.os.PowerManager;
+ import android.os.RemoteException;
+ import android.os.SystemClock;
+ import android.os.Trace;
+@@ -232,6 +233,15 @@ public class LauncherProxyService implements CallbackController<LauncherProxyLis
+             });
+         }
+ 
++        @Override
++        public void onSleepEvent(MotionEvent event) {
++            verifyCallerAndClearCallingIdentityPostMain("onSleepEvent", () -> {
++                PowerManager powerManager = mContext.getSystemService(PowerManager.class);
++                powerManager.goToSleep(event.getEventTime());
++                event.recycle();
++            });
++        }
++
+         @Override
+         public void onStatusBarTouchEvent(MotionEvent event) {
+             moveShadeWindowIfNeeded(event);
+diff --git a/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsController.java b/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsController.java
+index 988021e82..a76b845a1 100644
+--- a/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsController.java
++++ b/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsController.java
+@@ -192,6 +192,7 @@ public class UdfpsController implements DozeReceiver, Dumpable {
+     @NonNull private final MSDLPlayer mMsdlPlayer;
+     private final Lazy<SceneInteractor> mSceneInteractorLazy;
+     private final boolean mIgnoreRefreshRate;
++    private final boolean mRefreshRateBeforePointerDown;
+     private final KeyguardTransitionInteractor mKeyguardTransitionInteractor;
+ 
+     // Currently the UdfpsController supports a single UDFPS sensor. If devices have multiple
+@@ -731,6 +732,8 @@ public class UdfpsController implements DozeReceiver, Dumpable {
+         mUserActivityNotifier = userActivityNotifier;
+         mIgnoreRefreshRate = mContext.getResources()
+                     .getBoolean(R.bool.config_ignoreUdfpsVote);
++        mRefreshRateBeforePointerDown = mContext.getResources().getBoolean(
++                com.android.systemui.res.R.bool.config_udfpsRefreshRateBeforePointerDown);
+         // The fingerprint manager is queried for UDFPS before this class is constructed, so the
+         // fingerprint manager should never be null.
+         mFingerprintManager = checkNotNull(fingerprintManager);
+@@ -1103,13 +1106,21 @@ public class UdfpsController implements DozeReceiver, Dumpable {
+             mDeviceEntryFaceAuthInteractor.onUdfpsSensorTouched();
+         }
+         mOnFingerDown = true;
++        final View view = mOverlay.getTouchOverlay();
++        final boolean earlyRefreshRate = mRefreshRateBeforePointerDown
++                && view != null && isOptical() && !mIgnoreRefreshRate;
++        if (earlyRefreshRate) {
++            // Some HALs wait for panel readiness inside onPointerDown. Submit the display
++            // vote first, so this wait does not run at the lock screen's idle refresh rate.
++            // UI readiness must still follow the pointer-down notification below.
++            mUdfpsDisplayMode.enable(() -> {});
++        }
+         mFingerprintManager.onPointerDown(requestId, mSensorProps.sensorId, pointerId, x, y,
+                 minor, major, orientation, time, gestureStart, isAod);
+         Trace.endAsyncSection("UdfpsController.e2e.onPointerDown", 0);
+ 
+-        final View view = mOverlay.getTouchOverlay();
+         if (view != null && isOptical()) {
+-            if (mIgnoreRefreshRate) {
++            if (mIgnoreRefreshRate || earlyRefreshRate) {
+                 dispatchOnUiReady(requestId);
+             } else {
+                     mUdfpsDisplayMode.enable(() -> dispatchOnUiReady(requestId));
+diff --git a/packages/SystemUI/src/com/android/systemui/brightness/ui/compose/BrightnessSlider.kt b/packages/SystemUI/src/com/android/systemui/brightness/ui/compose/BrightnessSlider.kt
+index 04d480982..fce850cd6 100644
+--- a/packages/SystemUI/src/com/android/systemui/brightness/ui/compose/BrightnessSlider.kt
++++ b/packages/SystemUI/src/com/android/systemui/brightness/ui/compose/BrightnessSlider.kt
+@@ -17,6 +17,19 @@
+ package com.android.systemui.brightness.ui.compose
+ 
+ import android.content.Context
++import lineageos.providers.LineageSettings
++import androidx.compose.ui.res.painterResource
++import androidx.compose.ui.Alignment
++import androidx.compose.runtime.DisposableEffect
++import androidx.compose.material3.IconToggleButton
++import androidx.compose.material3.Icon as MaterialIcon
++import androidx.compose.foundation.layout.Arrangement
++import androidx.compose.foundation.layout.Row
++import android.provider.Settings
++import android.os.UserHandle
++import android.os.Looper
++import android.os.Handler
++import android.database.ContentObserver
+ import android.view.MotionEvent
+ import androidx.annotation.VisibleForTesting
+ import androidx.compose.animation.animateColorAsState
+@@ -390,12 +403,14 @@ fun BrightnessSliderContainer(
+         )
+ 
+     val isRestricted = restriction is PolicyRestriction.Restricted
+-    Box(
++    Row(
+         modifier =
+             modifier
+                 .padding(vertical = { dimensions.verticalPadding.roundToPx() })
+                 .fillMaxWidth()
+-                .sysuiResTag("brightness_slider")
++                .sysuiResTag("brightness_slider"),
++        verticalAlignment = Alignment.CenterVertically,
++        horizontalArrangement = Arrangement.spacedBy(8.dp),
+     ) {
+         BrightnessSlider(
+             enabled = enabled && !isRestricted,
+@@ -416,7 +431,7 @@ fun BrightnessSliderContainer(
+                 coroutineScope.launch { viewModel.onDrag(Drag.Stopped(GammaBrightness(it))) }
+             },
+             modifier =
+-                Modifier.borderOnFocus(
++                Modifier.weight(1f).borderOnFocus(
+                         color = MaterialTheme.colorScheme.secondary,
+                         cornerSize = CornerSize(SliderTrackRoundedCorner),
+                     )
+@@ -446,9 +461,11 @@ fun BrightnessSliderContainer(
+             },
+             dimensions = dimensions,
+         )
++        AutoBrightnessButton(enabled = enabled && !isRestricted && !overriddenByAppState)
+     }
+ }
+ 
++
+ data class ContainerColors(val idleColor: Color, val mirrorColor: Color) {
+     companion object {
+         fun singleColor(color: Color) = ContainerColors(color, color)
+@@ -505,3 +522,59 @@ object BrightnessSliderMotionTestKeys {
+     val ActiveIconAlpha = MotionTestValueKey<Float>("activeIconAlpha")
+     val InactiveIconAlpha = MotionTestValueKey<Float>("inactiveIconAlpha")
+ }
++
++/** Observe both the Lineage button preference and the actual Android brightness mode. */
++@Composable
++private fun AutoBrightnessButton(enabled: Boolean) {
++    val context = LocalContext.current
++    if (!context.resources.getBoolean(com.android.internal.R.bool.config_automatic_brightness_available)) {
++        return
++    }
++    val resolver = context.contentResolver
++    fun readState(): Pair<Boolean, Boolean> =
++        (LineageSettings.Secure.getIntForUser(
++            resolver, LineageSettings.Secure.QS_SHOW_AUTO_BRIGHTNESS,
++            1, UserHandle.USER_CURRENT,
++        ) != 0) to (Settings.System.getIntForUser(
++            resolver, Settings.System.SCREEN_BRIGHTNESS_MODE,
++            Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL, UserHandle.USER_CURRENT,
++        ) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC)
++    var state by remember(context) { mutableStateOf(readState()) }
++    DisposableEffect(context) {
++        val observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
++            override fun onChange(selfChange: Boolean) {
++                state = readState()
++            }
++        }
++        listOf(
++            LineageSettings.Secure.getUriFor(LineageSettings.Secure.QS_SHOW_AUTO_BRIGHTNESS),
++            Settings.System.getUriFor(Settings.System.SCREEN_BRIGHTNESS_MODE),
++        ).forEach { resolver.registerContentObserver(it, false, observer, UserHandle.USER_ALL) }
++        state = readState()
++        onDispose { resolver.unregisterContentObserver(observer) }
++    }
++    val (showButton, automatic) = state
++    if (showButton) {
++        IconToggleButton(
++            checked = automatic,
++            enabled = enabled,
++            onCheckedChange = { checked ->
++                Settings.System.putIntForUser(
++                    resolver, Settings.System.SCREEN_BRIGHTNESS_MODE,
++                    if (checked) Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
++                    else Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
++                    UserHandle.USER_CURRENT,
++                )
++            },
++            modifier = Modifier.sysuiResTag("auto_brightness_toggle"),
++        ) {
++            MaterialIcon(
++                painter = painterResource(
++                    if (automatic) R.drawable.ic_qs_brightness_auto_on
++                    else R.drawable.ic_qs_brightness_auto_off
++                ),
++                contentDescription = stringResource(R.string.accessibility_adaptive_brightness),
++            )
++        }
++    }
++}
+diff --git a/packages/SystemUI/src/com/android/systemui/qs/composefragment/QSFragmentCompose.kt b/packages/SystemUI/src/com/android/systemui/qs/composefragment/QSFragmentCompose.kt
+index 16b1c4faf..7fdba646e 100644
+--- a/packages/SystemUI/src/com/android/systemui/qs/composefragment/QSFragmentCompose.kt
++++ b/packages/SystemUI/src/com/android/systemui/qs/composefragment/QSFragmentCompose.kt
+@@ -19,12 +19,14 @@ package com.android.systemui.qs.composefragment
+ import android.annotation.SuppressLint
+ import android.content.Context
+ import android.content.res.Configuration
++import android.database.ContentObserver
+ import android.graphics.Canvas
+ import android.graphics.Path
+ import android.graphics.PointF
+ import android.graphics.Rect
+ import android.os.Bundle
+ import android.os.Trace
++import android.os.UserHandle
+ import android.view.LayoutInflater
+ import android.view.MotionEvent
+ import android.view.View
+@@ -58,6 +60,7 @@ import androidx.compose.runtime.derivedStateOf
+ import androidx.compose.runtime.getValue
+ import androidx.compose.runtime.mutableFloatStateOf
+ import androidx.compose.runtime.mutableIntStateOf
++import androidx.compose.runtime.mutableStateOf
+ import androidx.compose.runtime.remember
+ import androidx.compose.runtime.setValue
+ import androidx.compose.runtime.snapshotFlow
+@@ -100,6 +103,7 @@ import com.android.compose.animation.scene.ElementMatcher
+ import com.android.compose.animation.scene.MutableSceneTransitionLayoutState
+ import com.android.compose.animation.scene.SceneKey
+ import com.android.compose.animation.scene.SceneTransitionLayout
++import com.android.compose.animation.scene.SceneTransitionLayoutState
+ import com.android.compose.animation.scene.content.state.TransitionState
+ import com.android.compose.animation.scene.rememberMutableSceneTransitionLayoutState
+ import com.android.compose.animation.scene.transitions
+@@ -171,6 +175,7 @@ import kotlinx.coroutines.flow.collectLatest
+ import kotlinx.coroutines.flow.combine
+ import kotlinx.coroutines.flow.map
+ import kotlinx.coroutines.launch
++import lineageos.providers.LineageSettings
+ 
+ @SuppressLint("ValidFragment")
+ class QSFragmentCompose
+@@ -725,6 +730,11 @@ constructor(
+                             }
+                         }
+                         .let { state -> { state.value } }
++                val BrightnessSlider: @Composable () -> Unit = {
++                    Element(Elements.BrightnessSlider, modifier = modifier) {
++                        BrightnessSlider(viewModel, layoutState)
++                    }
++                }
+                 val Tiles =
+                     @Composable {
+                         QuickQuickSettings(
+@@ -769,6 +779,7 @@ constructor(
+                                 .padding(horizontal = qsHorizontalMargin())
+                     ) {
+                         QuickQuickSettingsLayout(
++                            brightness = BrightnessSlider,
+                             tiles = Tiles,
+                             media = Media,
+                             mediaInRow = viewModel.qqsMediaInRow,
+@@ -833,38 +844,11 @@ constructor(
+                         Spacer(
+                             modifier = Modifier.height { qqsPadding + qsExtraPadding.roundToPx() }
+                         )
+-                        val BrightnessSlider =
+-                            @Composable {
+-                                Box(
+-                                    Modifier.systemGestureExclusionInShade(
+-                                        enabled = {
+-                                            /*
+-                                             * While we are transitioning into QS (either from QQS
+-                                             * or from gone), the global position of the brightness
+-                                             * slider will change in every frame. This causes
+-                                             * the modifier to send a new gesture exclusion
+-                                             * rectangle on every frame. Instead, only apply the
+-                                             * modifier when this is settled.
+-                                             */
+-                                            layoutState.transitionState is TransitionState.Idle &&
+-                                                viewModel.isNotTransitioning
+-                                        }
+-                                    )
+-                                ) {
+-                                    AlwaysDarkMode {
+-                                        BrightnessSliderContainer(
+-                                            viewModel =
+-                                                containerViewModel.brightnessSliderViewModel,
+-                                            containerColors =
+-                                                ContainerColors(
+-                                                    Color.Transparent,
+-                                                    ContainerColors.defaultContainerColor,
+-                                                ),
+-                                            modifier = Modifier.fillMaxWidth(),
+-                                        )
+-                                    }
+-                                }
++                        val BrightnessSlider: @Composable () -> Unit = {
++                            Element(Elements.BrightnessSlider, modifier = modifier) {
++                                BrightnessSlider(viewModel, layoutState)
+                             }
++                        }
+                         // When always compose is false, this will always be true, and
+                         // we'll be listening whenever this is composed. When always
+                         // compose is true, we look a the second condition and we'll
+@@ -944,6 +928,43 @@ constructor(
+         }
+     }
+ 
++    @Composable
++    private fun BrightnessSlider(
++        viewModel: QSFragmentComposeViewModel,
++        layoutState: SceneTransitionLayoutState,
++    ) {
++        if (!viewModel.isBrightnessSliderVisible) return
++        Box(
++            Modifier.systemGestureExclusionInShade(
++                enabled = {
++                    /*
++                     * While we are transitioning into QS (either from QQS
++                     * or from gone), the global position of the brightness
++                     * slider will change in every frame. This causes
++                     * the modifier to send a new gesture exclusion
++                     * rectangle on every frame. Instead, only apply the
++                     * modifier when this is settled.
++                     */
++                    layoutState.transitionState is TransitionState.Idle &&
++                        viewModel.isNotTransitioning
++                }
++            )
++        ) {
++            AlwaysDarkMode {
++                BrightnessSliderContainer(
++                    viewModel =
++                        viewModel.containerViewModel.brightnessSliderViewModel,
++                    containerColors =
++                        ContainerColors(
++                            Color.Transparent,
++                            ContainerColors.defaultContainerColor,
++                        ),
++                    modifier = Modifier.fillMaxWidth(),
++                )
++            }
++        }
++    }
++
+     @Composable
+     private fun EditModeElement(modifier: Modifier = Modifier) {
+         // No need for top padding, the Scaffold inside takes care of the correct insets
+@@ -1420,21 +1441,37 @@ private fun ContentScope.MediaObject(
+ @Composable
+ @VisibleForTesting
+ fun QuickQuickSettingsLayout(
++    brightness: @Composable () -> Unit,
+     tiles: @Composable () -> Unit,
+     media: @Composable () -> Unit,
+     mediaInRow: Boolean,
+ ) {
+-    if (mediaInRow) {
+-        Row(
+-            horizontalArrangement = spacedBy(QuickSettingsShade.Dimensions.HorizontalPadding),
+-            verticalAlignment = Alignment.CenterVertically,
+-        ) {
+-            Box(modifier = Modifier.weight(1f)) { tiles() }
+-            Box(modifier = Modifier.weight(1f)) { media() }
++    val brightnessSettings = rememberQsBrightnessSettings()
++    val sliderAtTop = brightnessSettings.sliderAtTop
++    val showSlider = brightnessSettings.showSlider
++
++    Column(verticalArrangement = spacedBy(dimensionResource(R.dimen.qs_tile_margin_vertical))) {
++        if (showSlider == 2 && sliderAtTop) {
++            brightness()
+         }
+-    } else {
+-        Column(verticalArrangement = spacedBy(dimensionResource(R.dimen.qs_tile_margin_vertical))) {
++
++        if (mediaInRow) {
++            Row(
++                horizontalArrangement = spacedBy(dimensionResource(R.dimen.qs_tile_margin_vertical)),
++                verticalAlignment = Alignment.CenterVertically,
++            ) {
++                Box(modifier = Modifier.weight(1f)) { tiles() }
++                Box(modifier = Modifier.weight(1f)) { media() }
++            }
++        } else {
+             tiles()
++        }
++
++        if (showSlider == 2 && !sliderAtTop) {
++            brightness()
++        }
++
++        if (!mediaInRow) {
+             media()
+         }
+     }
+@@ -1449,12 +1486,19 @@ fun QuickSettingsLayout(
+     media: @Composable () -> Unit,
+     mediaInRow: Boolean,
+ ) {
+-    if (mediaInRow) {
+-        Column(
+-            verticalArrangement = spacedBy(QuickSettingsShade.Dimensions.VerticalPadding),
+-            horizontalAlignment = Alignment.CenterHorizontally,
+-        ) {
++    val brightnessSettings = rememberQsBrightnessSettings()
++    val sliderAtTop = brightnessSettings.sliderAtTop
++    val showSlider = brightnessSettings.showSlider
++
++    Column(
++        verticalArrangement = spacedBy(dimensionResource(R.dimen.qs_tile_margin_vertical)),
++        horizontalAlignment = Alignment.CenterHorizontally
++    ) {
++        if (showSlider != 0 && sliderAtTop) {
+             brightness()
++        }
++
++        if (mediaInRow) {
+             Row(
+                 horizontalArrangement = spacedBy(QuickSettingsShade.Dimensions.HorizontalPadding),
+                 verticalAlignment = Alignment.CenterVertically,
+@@ -1462,14 +1506,15 @@ fun QuickSettingsLayout(
+                 Box(modifier = Modifier.weight(1f)) { tiles() }
+                 Box(modifier = Modifier.weight(1f)) { media() }
+             }
++        } else {
++            tiles()
+         }
+-    } else {
+-        Column(
+-            verticalArrangement = spacedBy(QuickSettingsShade.Dimensions.VerticalPadding),
+-            horizontalAlignment = Alignment.CenterHorizontally,
+-        ) {
++
++        if (showSlider != 0 && !sliderAtTop) {
+             brightness()
+-            tiles()
++        }
++
++        if (!mediaInRow) {
+             media()
+         }
+     }
+@@ -1522,3 +1567,64 @@ private fun AlwaysDarkMode(content: @Composable () -> Unit) {
+         }
+     }
+ }
++
++@Composable
++private fun rememberQsBrightnessSettings(): QsBrightnessSettings {
++    val context = LocalContext.current
++    val cr = remember { context.contentResolver }
++
++    fun readCurrent(): QsBrightnessSettings {
++        val position = runCatching {
++            LineageSettings.Secure.getIntForUser(
++                cr, LineageSettings.Secure.QS_BRIGHTNESS_SLIDER_POSITION,
++                0, UserHandle.USER_CURRENT
++            )
++        }.getOrElse { 0 }
++
++        val showSliderValue = runCatching {
++            LineageSettings.Secure.getIntForUser(
++                cr, LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
++                1, UserHandle.USER_CURRENT
++            )
++        }.getOrElse { 1 }
++
++        return QsBrightnessSettings(
++            sliderAtTop = position == 0,
++            showSlider = showSliderValue,
++        )
++    }
++
++    var state by remember {
++        mutableStateOf(readCurrent())
++    }
++
++    DisposableEffect(Unit) {
++        val observer = object : ContentObserver(null) {
++            override fun onChange(selfChange: Boolean) {
++                context.mainExecutor.execute {
++                    state = readCurrent()
++                }
++            }
++        }
++
++        cr.registerContentObserver(
++            LineageSettings.Secure.getUriFor(LineageSettings.Secure.QS_BRIGHTNESS_SLIDER_POSITION),
++            false, observer, UserHandle.USER_ALL
++        )
++        cr.registerContentObserver(
++            LineageSettings.Secure.getUriFor(LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER),
++            false, observer, UserHandle.USER_ALL
++        )
++
++        onDispose {
++            cr.unregisterContentObserver(observer)
++        }
++    }
++
++    return state
++}
++
++private data class QsBrightnessSettings(
++    val sliderAtTop: Boolean,
++    val showSlider: Int,
++)
+diff --git a/packages/SystemUI/src/com/android/systemui/qs/composefragment/ui/FromQuickQuickSettingsToQuickSettings.kt b/packages/SystemUI/src/com/android/systemui/qs/composefragment/ui/FromQuickQuickSettingsToQuickSettings.kt
+index 64cd529b7..ba7aa0e8a 100644
+--- a/packages/SystemUI/src/com/android/systemui/qs/composefragment/ui/FromQuickQuickSettingsToQuickSettings.kt
++++ b/packages/SystemUI/src/com/android/systemui/qs/composefragment/ui/FromQuickQuickSettingsToQuickSettings.kt
+@@ -31,6 +31,7 @@ fun TransitionBuilder.quickQuickSettingsToQuickSettings(
+     anchoredTranslate(Elements.QuickSettingsContent, Elements.GridAnchor)
+ 
+     sharedElement(Elements.TileElementMatcher, enabled = animateTilesExpansion())
++    sharedElement(Elements.BrightnessSlider)
+ 
+     // This will animate between 0f (QQS) and 0.5, fading in the QQS tiles when coming back
+     // from non first page QS. The QS content ends fading out at 0.43f, so there's a brief
+diff --git a/packages/SystemUI/src/com/android/systemui/shade/ShadeHeaderController.kt b/packages/SystemUI/src/com/android/systemui/shade/ShadeHeaderController.kt
+index 2c5fa7ec7..85c5566fe 100644
+--- a/packages/SystemUI/src/com/android/systemui/shade/ShadeHeaderController.kt
++++ b/packages/SystemUI/src/com/android/systemui/shade/ShadeHeaderController.kt
+@@ -58,6 +58,7 @@ import com.android.systemui.demomode.DemoMode
+ import com.android.systemui.demomode.DemoModeController
+ import com.android.systemui.display.dagger.SystemUIDisplaySubcomponent
+ import com.android.systemui.dump.DumpManager
++import com.android.systemui.lifecycle.rememberViewModel
+ import com.android.systemui.plugins.ActivityStarter
+ import com.android.systemui.qs.ChipVisibilityListener
+ import com.android.systemui.qs.HeaderPrivacyIconsController
+@@ -114,7 +115,7 @@ constructor(
+     @ShadeDisplayAware private val context: Context,
+     private val shadeDisplaysRepositoryLazy: Lazy<ShadeDisplaysRepository>,
+     private val variableDateViewControllerFactory: VariableDateViewController.Factory,
+-    private val unifiedBatteryViewModelFactory: BatteryViewModel.AlwaysShowPercent.Factory,
++    private val unifiedBatteryViewModelFactory: BatteryViewModel.BasedOnUserSetting.Factory,
+     private val dumpManager: DumpManager,
+     private val shadeCarrierGroupControllerBuilder: ShadeCarrierGroupController.Builder,
+     private val combinedShadeHeadersConstraintManager: CombinedShadeHeadersConstraintManager,
+@@ -412,6 +413,15 @@ constructor(
+         }
+     }
+ 
++    private val clockLayoutListener =
++        View.OnLayoutChangeListener { v, left, _, right, _, oldLeft, _, oldRight, _ ->
++            v.pivotX = if (v.isLayoutRtl) v.width.toFloat() else 0f
++            v.pivotY = v.height.toFloat() / 2
++            if (right - left != oldRight - oldLeft) {
++                updateCarrierGroupPadding()
++            }
++        }
++
+     override fun onViewAttached() {
+         privacyIconsController.chipVisibilityListener = chipVisibilityListener
+         updateVisibility()
+@@ -420,11 +430,7 @@ constructor(
+ 
+         header.setOnApplyWindowInsetsListener(insetListener)
+ 
+-        clock.addOnLayoutChangeListener { v, _, _, _, _, _, _, _, _ ->
+-            val newPivot = if (v.isLayoutRtl) v.width.toFloat() else 0f
+-            v.pivotX = newPivot
+-            v.pivotY = v.height.toFloat() / 2
+-        }
++        clock.addOnLayoutChangeListener(clockLayoutListener)
+         clock.setOnClickListener { launchClockActivity() }
+ 
+         dumpManager.registerDumpable(this)
+@@ -438,6 +444,7 @@ constructor(
+     }
+ 
+     override fun onViewDetached() {
++        clock.removeOnLayoutChangeListener(clockLayoutListener)
+         clock.setOnClickListener(null)
+         privacyIconsController.chipVisibilityListener = null
+         dumpManager.unregisterDumpable(this::class.java.simpleName)
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/events/StatusEvent.kt b/packages/SystemUI/src/com/android/systemui/statusbar/events/StatusEvent.kt
+index 204391c3b..1f5a6da57 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/events/StatusEvent.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/events/StatusEvent.kt
+@@ -74,7 +74,11 @@ class BGImageView(context: Context) : ImageView(context), BackgroundAnimatableVi
+     }
+ }
+ 
+-class BatteryEvent(@IntRange(from = 0, to = 100) val batteryLevel: Int) : StatusEvent {
++class BatteryEvent(
++    @IntRange(from = 0, to = 100) val batteryLevel: Int,
++    val batteryIconStyle: Int,
++    val showPercentNextToIcon: Boolean,
++) : StatusEvent {
+     override val priority = 50
+     override var forceVisible = false
+     override val showAnimation = true
+@@ -83,7 +87,12 @@ class BatteryEvent(@IntRange(from = 0, to = 100) val batteryLevel: Int) : Status
+ 
+     override val viewCreator: ViewCreator = { context ->
+         if (NewStatusBarIcons.isEnabled) {
+-            BatteryStatusEventComposeChip(batteryLevel, context)
++            BatteryStatusEventComposeChip(
++                batteryLevel,
++                batteryIconStyle,
++                showPercentNextToIcon,
++                context,
++            )
+         } else {
+             BatteryStatusChip(context).apply { setBatteryLevel(batteryLevel) }
+         }
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/events/SystemEventCoordinator.kt b/packages/SystemUI/src/com/android/systemui/statusbar/events/SystemEventCoordinator.kt
+index 6d6daf1d6..63af6520b 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/events/SystemEventCoordinator.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/events/SystemEventCoordinator.kt
+@@ -35,6 +35,7 @@ import com.android.systemui.privacy.PrivacyItem
+ import com.android.systemui.privacy.PrivacyItemController
+ import com.android.systemui.privacy.PrivacyType
+ import com.android.systemui.res.R
++import com.android.systemui.statusbar.pipeline.battery.domain.interactor.BatteryInteractor
+ import com.android.systemui.statusbar.policy.BatteryController
+ import com.android.systemui.util.time.SystemClock
+ import javax.inject.Inject
+@@ -53,6 +54,7 @@ class SystemEventCoordinator
+ constructor(
+     private val systemClock: SystemClock,
+     private val batteryController: BatteryController,
++    private val batteryInteractor: BatteryInteractor,
+     private val privacyController: PrivacyItemController,
+     @DisplayAware private val context: Context,
+     @DisplayAware private val scope: CoroutineScope,
+@@ -92,7 +94,15 @@ constructor(
+     }
+ 
+     fun notifyPluggedIn(@IntRange(from = 0, to = 100) batteryLevel: Int) {
+-        scope.launch(mainCoroutineContext) { scheduler.onStatusEvent(BatteryEvent(batteryLevel)) }
++        scope.launch(mainCoroutineContext) {
++        scheduler.onStatusEvent(
++            BatteryEvent(
++                batteryLevel,
++                batteryInteractor.batteryIconStyle.value,
++                batteryInteractor.showPercentNextToIcon.value,
++            )
++        )
++        }
+     }
+ 
+     fun notifyPrivacyItemsEmpty() {
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/events/ui/view/BatteryStatusEventComposeChip.kt b/packages/SystemUI/src/com/android/systemui/statusbar/events/ui/view/BatteryStatusEventComposeChip.kt
+index f17b6c793..782692366 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/events/ui/view/BatteryStatusEventComposeChip.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/events/ui/view/BatteryStatusEventComposeChip.kt
+@@ -18,10 +18,18 @@ package com.android.systemui.statusbar.events.ui.view
+ 
+ import android.annotation.SuppressLint
+ import android.content.Context
++import java.text.NumberFormat
++import androidx.compose.ui.unit.dp
++import androidx.compose.ui.Alignment
++import androidx.compose.material3.Text
++import androidx.compose.material3.MaterialTheme
++import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+ import android.util.AttributeSet
+ import android.view.View
+ import android.widget.FrameLayout
+ import android.widget.LinearLayout
++import androidx.compose.foundation.layout.Arrangement
++import androidx.compose.foundation.layout.Row
+ import androidx.compose.foundation.layout.height
+ import androidx.compose.foundation.layout.wrapContentWidth
+ import androidx.compose.runtime.Composable
+@@ -33,12 +41,12 @@ import com.android.compose.theme.PlatformTheme
+ import com.android.systemui.res.R
+ import com.android.systemui.statusbar.core.NewStatusBarIcons
+ import com.android.systemui.statusbar.events.BackgroundAnimatableView
++import com.android.systemui.statusbar.pipeline.battery.data.repository.BatteryRepository
+ import com.android.systemui.statusbar.pipeline.battery.domain.interactor.BatteryInteractor
+ import com.android.systemui.statusbar.pipeline.battery.shared.ui.BatteryColors
+ import com.android.systemui.statusbar.pipeline.battery.shared.ui.BatteryGlyph
+ import com.android.systemui.statusbar.pipeline.battery.ui.composable.BatteryLayout
+ import com.android.systemui.statusbar.pipeline.battery.ui.viewmodel.BatteryViewModel
+-import com.android.systemui.statusbar.pipeline.battery.ui.viewmodel.BatteryViewModel.Companion.glyphRepresentation
+ 
+ /**
+  * [StatusEvent] chip for the battery plugged in status event. Shows the current battery level and
+@@ -49,8 +57,13 @@ import com.android.systemui.statusbar.pipeline.battery.ui.viewmodel.BatteryViewM
+ @SuppressLint("ViewConstructor")
+ class BatteryStatusEventComposeChip
+ @JvmOverloads
+-constructor(level: Int, context: Context, attrs: AttributeSet? = null) :
+-    FrameLayout(context, attrs), BackgroundAnimatableView {
++constructor(
++    level: Int,
++    batteryIconStyle: Int,
++    showPercentNextToIcon: Boolean,
++    context: Context,
++    attrs: AttributeSet? = null,
++) : FrameLayout(context, attrs), BackgroundAnimatableView {
+     private val roundedContainer: LinearLayout
+     private val composeInner: ComposeView
+     override val contentView: View
+@@ -62,7 +75,13 @@ constructor(level: Int, context: Context, attrs: AttributeSet? = null) :
+         inflate(context, R.layout.status_bar_event_chip_compose, this)
+         roundedContainer = requireViewById(R.id.rounded_container)
+         composeInner = requireViewById(R.id.compose_view)
+-        composeInner.apply { setContent { PlatformTheme { UnifiedBatteryChip(level) } } }
++        composeInner.apply {
++            setContent {
++                PlatformTheme {
++                    BatteryAndPercentChip(level, batteryIconStyle, showPercentNextToIcon)
++                }
++            }
++        }
+         updateResources()
+     }
+ 
+@@ -81,21 +100,43 @@ constructor(level: Int, context: Context, attrs: AttributeSet? = null) :
+     }
+ }
+ 
++
++@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+ @Composable
+-private fun UnifiedBatteryChip(level: Int) {
++private fun BatteryAndPercentChip(
++    level: Int,
++    batteryIconStyle: Int,
++    showPercentNextToIcon: Boolean,
++) {
+     val isFull = BatteryInteractor.isBatteryFull(level)
+     val height =
+         with(LocalDensity.current) {
+             BatteryViewModel.getStatusBarBatteryHeight(LocalContext.current).toDp()
+         }
+-    BatteryLayout(
+-        attribution = BatteryGlyph.Bolt, // Always charging
+-        levelProvider = { level },
+-        isFullProvider = { isFull },
+-        glyphsProvider = { level.glyphRepresentation() },
+-        colorsProvider = { BatteryColors.DarkTheme.Charging },
+-        modifier = Modifier.height(height).wrapContentWidth(),
+-        // TODO(b/394659067): get a content description for this chip
+-        contentDescription = "",
+-    )
++    Row(
++        horizontalArrangement = Arrangement.spacedBy(4.dp),
++        verticalAlignment = Alignment.CenterVertically,
++    ) {
++        val isText = batteryIconStyle == BatteryRepository.ICON_STYLE_TEXT
++        if (!isText) {
++            BatteryLayout(
++                attribution = BatteryGlyph.Bolt, // Always charging
++                iconStyleProvider = { batteryIconStyle },
++                levelProvider = { level },
++                showLevelProvider = { false },
++                isFullProvider = { isFull },
++                glyphsProvider = { emptyList() },
++                colorsProvider = { BatteryColors.DarkTheme.Charging },
++                modifier = Modifier.height(height).wrapContentWidth(),
++                contentDescription = "",
++            )
++        }
++        if (isText || showPercentNextToIcon) {
++            Text(
++                text = NumberFormat.getPercentInstance().format(level / 100f),
++                color = BatteryColors.DarkTheme.Default.fill,
++                style = MaterialTheme.typography.labelLargeEmphasized,
++            )
++        }
++    }
+ }
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/phone/BiometricUnlockController.java b/packages/SystemUI/src/com/android/systemui/statusbar/phone/BiometricUnlockController.java
+index 86c37e52c..919ccba74 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/phone/BiometricUnlockController.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/phone/BiometricUnlockController.java
+@@ -205,6 +205,7 @@ public class BiometricUnlockController extends KeyguardUpdateMonitorCallback imp
+     private final BiometricUnlockLogger mLogger;
+     private final SystemClock mSystemClock;
+     private final boolean mOrderUnlockAndWake;
++    private final boolean mUdfpsSkipDozeBrightnessOverride;
+     private final Lazy<SelectedUserInteractor> mSelectedUserInteractor;
+     private final KeyguardTransitionInteractor mKeyguardTransitionInteractor;
+     private final Lazy<SceneInteractor> mSceneInteractor;
+@@ -351,6 +352,8 @@ public class BiometricUnlockController extends KeyguardUpdateMonitorCallback imp
+         mSystemClock = systemClock;
+         mOrderUnlockAndWake = resources.getBoolean(
+                 com.android.internal.R.bool.config_orderUnlockAndWake);
++        mUdfpsSkipDozeBrightnessOverride = resources.getBoolean(
++                R.bool.config_udfpsSkipDozeBrightnessOverride);
+         mSelectedUserInteractor = selectedUserInteractor;
+         mKeyguardTransitionInteractor = keyguardTransitionInteractor;
+         javaAdapter.alwaysCollectFlow(
+@@ -528,7 +531,10 @@ public class BiometricUnlockController extends KeyguardUpdateMonitorCallback imp
+         mLogger.logStartWakeAndUnlock(mode);
+         boolean wasDeviceInteractive = mUpdateMonitor.isDeviceInteractive();
+         mMode = mode;
+-        if (mMode == MODE_WAKE_AND_DISMISS_PULSING) {
++        final boolean skipDozeBrightness = mUdfpsSkipDozeBrightnessOverride
++                && biometricUnlockSource == BiometricUnlockSource.FINGERPRINT_SENSOR
++                && mUpdateMonitor.isOpticalUdfpsSupported();
++        if (mMode == MODE_WAKE_AND_DISMISS_PULSING && !skipDozeBrightness) {
+             // If we are waking the device up while we are pulsing the clock and the
+             // notifications would light up first, creating an unpleasant animation.
+             // Defer changing the screen brightness by forcing doze brightness on our window
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/phone/KeyguardStatusBarViewController.java b/packages/SystemUI/src/com/android/systemui/statusbar/phone/KeyguardStatusBarViewController.java
+index b95e542e2..af45e8484 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/phone/KeyguardStatusBarViewController.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/phone/KeyguardStatusBarViewController.java
+@@ -135,7 +135,7 @@ public class KeyguardStatusBarViewController extends ViewController<KeyguardStat
+     private final UserInfoController mUserInfoController;
+     private final StatusBarIconController mStatusBarIconController;
+     private final TintedIconManager.Factory mTintedIconManagerFactory;
+-    private final BatteryViewModel.ShowPercentWhenChargingOrSetting.Factory mBatteryViewModel;
++    private final BatteryViewModel.BasedOnUserSetting.Factory mBatteryViewModel;
+     private final ShadeViewStateProvider mShadeViewStateProvider;
+     private final KeyguardStateController mKeyguardStateController;
+     private final KeyguardBypassController mKeyguardBypassController;
+@@ -353,7 +353,7 @@ public class KeyguardStatusBarViewController extends ViewController<KeyguardStat
+             UserInfoController userInfoController,
+             StatusBarIconController statusBarIconController,
+             TintedIconManager.Factory tintedIconManagerFactory,
+-            BatteryViewModel.ShowPercentWhenChargingOrSetting.Factory batteryViewModel,
++            BatteryViewModel.BasedOnUserSetting.Factory batteryViewModel,
+             ShadeViewStateProvider shadeViewStateProvider,
+             KeyguardStateController keyguardStateController,
+             KeyguardBypassController bypassController,
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/phone/NetworkTrafficView.java b/packages/SystemUI/src/com/android/systemui/statusbar/phone/NetworkTrafficView.java
+new file mode 100644
+index 000000000..c4036d514
+--- /dev/null
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/phone/NetworkTrafficView.java
+@@ -0,0 +1,104 @@
++/*
++ * Copyright (C) 2026 The LineageOS Project
++ * SPDX-License-Identifier: Apache-2.0
++ */
++package com.android.systemui.statusbar.phone;
++
++import android.content.Context;
++import android.graphics.Rect;
++import android.view.Gravity;
++import android.widget.FrameLayout;
++
++import com.android.systemui.plugins.DarkIconDispatcher;
++
++import org.lineageos.internal.statusbar.LineageStatusBarItem;
++import org.lineageos.internal.statusbar.NetworkTraffic;
++
++import java.util.ArrayList;
++
++/** Attaches the SDK traffic indicator to the display's tint and visibility lifecycle. */
++public final class NetworkTrafficView extends FrameLayout
++        implements LineageStatusBarItem.Manager, DarkIconDispatcher.DarkReceiver {
++    private final DarkIconDispatcher mDarkIconDispatcher;
++    private final ArrayList<LineageStatusBarItem.DarkReceiver> mDarkReceivers = new ArrayList<>();
++    private final ArrayList<LineageStatusBarItem.VisibilityReceiver> mVisibilityReceivers =
++            new ArrayList<>();
++    private ArrayList<Rect> mTintAreas = new ArrayList<>();
++    private float mDarkIntensity;
++    private int mTint = DarkIconDispatcher.DEFAULT_ICON_TINT;
++
++    public NetworkTrafficView(Context context, int position, DarkIconDispatcher dispatcher) {
++        super(context);
++        mDarkIconDispatcher = dispatcher;
++        NetworkTraffic traffic = new NetworkTraffic(context);
++        traffic.setViewPosition(position);
++        traffic.setGravity(Gravity.CENTER_VERTICAL);
++        addView(traffic, new LayoutParams(LayoutParams.WRAP_CONTENT,
++                LayoutParams.MATCH_PARENT, Gravity.CENTER_VERTICAL));
++    }
++
++    @Override
++    protected void onAttachedToWindow() {
++        super.onAttachedToWindow();
++        mDarkIconDispatcher.addDarkReceiver(this);
++    }
++
++    @Override
++    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
++        super.onLayout(changed, left, top, right, bottom);
++        if (changed && isAttachedToWindow()) {
++            mDarkIconDispatcher.applyDark(this);
++        }
++    }
++
++    @Override
++    protected void onDetachedFromWindow() {
++        mDarkIconDispatcher.removeDarkReceiver(this);
++        super.onDetachedFromWindow();
++    }
++
++    @Override
++    public void onDarkChanged(ArrayList<Rect> areas, float darkIntensity, int tint) {
++        mTintAreas = new ArrayList<>(areas);
++        mDarkIntensity = darkIntensity;
++        mTint = tint;
++        for (LineageStatusBarItem.DarkReceiver receiver : mDarkReceivers) {
++            dispatchTint(receiver);
++        }
++    }
++
++    private void dispatchTint(LineageStatusBarItem.DarkReceiver receiver) {
++        receiver.onDarkChanged(mTintAreas, mDarkIntensity,
++                DarkIconDispatcher.getTint(mTintAreas, this, mTint));
++    }
++
++    @Override
++    public void addDarkReceiver(LineageStatusBarItem.DarkReceiver receiver) {
++        mDarkReceivers.add(receiver);
++        dispatchTint(receiver);
++    }
++
++    @Override
++    public void removeDarkReceiver(LineageStatusBarItem.DarkReceiver receiver) {
++        mDarkReceivers.remove(receiver);
++    }
++
++    @Override
++    public void addVisibilityReceiver(LineageStatusBarItem.VisibilityReceiver receiver) {
++        mVisibilityReceivers.add(receiver);
++        receiver.onVisibilityChanged(isShown());
++    }
++
++    @Override
++    public void removeVisibilityReceiver(LineageStatusBarItem.VisibilityReceiver receiver) {
++        mVisibilityReceivers.remove(receiver);
++    }
++
++    @Override
++    public void onVisibilityAggregated(boolean isVisible) {
++        super.onVisibilityAggregated(isVisible);
++        for (LineageStatusBarItem.VisibilityReceiver receiver : mVisibilityReceivers) {
++            receiver.onVisibilityChanged(isVisible);
++        }
++    }
++}
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarView.java b/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarView.java
+index db91ce3c1..311d0bfe6 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarView.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarView.java
+@@ -26,8 +26,10 @@ import android.graphics.Rect;
+ import android.graphics.Region;
+ import android.util.AttributeSet;
+ import android.util.Log;
++import android.view.Display;
+ import android.view.DisplayCutout;
+ import android.view.MotionEvent;
++import android.view.Surface;
+ import android.view.View;
+ import android.view.ViewGroup;
+ import android.view.WindowInsets;
+@@ -382,6 +384,16 @@ public class PhoneStatusBarView extends FrameLayout {
+                 insets.top,
+                 insets.right,
+                 getPaddingBottom());
++
++        // Apply negative paddings to centered area layout so that we'll actually be on the center.
++        Display display = getDisplay();
++        final int winRotation = display != null ? display.getRotation() : Surface.ROTATION_0;
++        LayoutParams centeredAreaParams =
++                (LayoutParams) findViewById(R.id.centered_area).getLayoutParams();
++        centeredAreaParams.leftMargin =
++                winRotation == Surface.ROTATION_0 ? -insets.left : 0;
++        centeredAreaParams.rightMargin =
++                winRotation == Surface.ROTATION_0 ? -insets.right : 0;
+     }
+ 
+     interface HasCornerCutoutFetcher {
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarViewController.kt b/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarViewController.kt
+index 8e907fb31..2d3f497b3 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarViewController.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarViewController.kt
+@@ -89,6 +89,8 @@ private constructor(
+ ) : ViewController<PhoneStatusBarView>(view) {
+ 
+     private lateinit var clock: Clock
++    private lateinit var clockCenter: Clock
++    private lateinit var clockRight: Clock
+     private lateinit var startSideContainer: View
+     private lateinit var endSideContainer: View
+ 
+@@ -180,6 +182,8 @@ private constructor(
+ 
+     override fun onViewAttached() {
+         clock = mView.requireViewById(R.id.clock)
++        clockCenter = mView.requireViewById(R.id.clock_center)
++        clockRight = mView.requireViewById(R.id.clock_right)
+ 
+         addDarkReceivers()
+ 
+@@ -315,10 +319,14 @@ private constructor(
+ 
+     private fun addDarkReceivers() {
+         darkIconDispatcher.addDarkReceiver(clock)
++        darkIconDispatcher.addDarkReceiver(clockCenter)
++        darkIconDispatcher.addDarkReceiver(clockRight)
+     }
+ 
+     private fun removeDarkReceivers() {
+         darkIconDispatcher.removeDarkReceiver(clock)
++        darkIconDispatcher.removeDarkReceiver(clockCenter)
++        darkIconDispatcher.removeDarkReceiver(clockRight)
+     }
+ 
+     @Deprecated(
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/data/repository/BatteryRepository.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/data/repository/BatteryRepository.kt
+index 515ebf871..ed85ce17b 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/data/repository/BatteryRepository.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/data/repository/BatteryRepository.kt
+@@ -18,6 +18,10 @@ package com.android.systemui.statusbar.pipeline.battery.data.repository
+ 
+ import android.content.Context
+ import android.provider.Settings
++import android.database.ContentObserver
++import android.os.Handler
++import android.os.Looper
++import android.os.UserHandle
+ import com.android.systemui.dagger.SysUISingleton
+ import com.android.systemui.dagger.qualifiers.Application
+ import com.android.systemui.dagger.qualifiers.Background
+@@ -44,6 +48,7 @@ import kotlinx.coroutines.flow.map
+ import kotlinx.coroutines.flow.scan
+ import kotlinx.coroutines.flow.stateIn
+ import kotlinx.coroutines.suspendCancellableCoroutine
++import lineageos.providers.LineageSettings
+ 
+ /** Repository-style state for battery information. */
+ interface BatteryRepository {
+@@ -71,10 +76,26 @@ interface BatteryRepository {
+     val isStateUnknown: Flow<Boolean>
+ 
+     /**
+-     * [Settings.System.SHOW_BATTERY_PERCENT]. A user setting to indicate whether we should show the
+-     * battery percentage in the home screen status bar
++     * [LineageSettings.System.STATUS_BAR_BATTERY_STYLE]. A user setting to indicate the battery
++     * style in the home screen status bar
+      */
+-    val isShowBatteryPercentSettingEnabled: StateFlow<Boolean>
++    val batteryIconStyle: StateFlow<Int>
++
++    /**
++     * [LineageSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT]. A user setting to indicate whether
++     * we should show the battery percentage in the home screen status bar
++     */
++    val showBatteryPercentMode: StateFlow<Int>
++
++    companion object {
++        const val ICON_STYLE_DEFAULT = 0
++        const val ICON_STYLE_CIRCLE = 1
++        const val ICON_STYLE_TEXT = 2
++        const val ICON_STYLE_CIRCLE_DOTTED = 3
++        const val SHOW_PERCENT_HIDDEN = 0
++        const val SHOW_PERCENT_INSIDE = 1
++        const val SHOW_PERCENT_NEXT_TO = 2
++    }
+ 
+     /**
+      * If available, this flow yields a string that describes the approximate time remaining for the
+@@ -244,22 +265,116 @@ constructor(
+             )
+             .stateIn(scope, SharingStarted.WhileSubscribed(), batteryState.value.isStateUnknown)
+ 
+-    override val isShowBatteryPercentSettingEnabled = run {
+-        val default =
+-            context.resources.getBoolean(
+-                com.android.internal.R.bool.config_defaultBatteryPercentageSetting
++    override val batteryIconStyle =
++        callbackFlow {
++                val resolver = context.contentResolver
++                val uri =
++                    LineageSettings.System.getUriFor(
++                        LineageSettings.System.STATUS_BAR_BATTERY_STYLE
++                    )
++
++                fun readMode(): Int {
++                    return LineageSettings.System.getIntForUser(
++                        resolver,
++                        LineageSettings.System.STATUS_BAR_BATTERY_STYLE,
++                        BatteryRepository.ICON_STYLE_DEFAULT,
++                        UserHandle.USER_CURRENT,
++                    )
++                }
++
++                val observer =
++                    object : ContentObserver(Handler(Looper.getMainLooper())) {
++                        override fun onChange(selfChange: Boolean) {
++                            trySend(readMode())
++                        }
++                    }
++
++                resolver.registerContentObserver(
++                    uri,
++                    /* notifyForDescendants = */ false,
++                    observer,
++                    UserHandle.USER_ALL,
++                )
++
++                // Emit current value immediately
++                trySend(readMode())
++
++                awaitClose { resolver.unregisterContentObserver(observer) }
++            }
++            .distinctUntilChanged()
++            .flowOn(bgDispatcher)
++            .stateIn(
++                scope = scope,
++                started = SharingStarted.Lazily,
++                initialValue = BatteryRepository.ICON_STYLE_DEFAULT,
+             )
+-        settingsRepository
+-            .boolSetting(name = Settings.System.SHOW_BATTERY_PERCENT, defaultValue = default)
++
++    override val showBatteryPercentMode =
++        callbackFlow {
++                val resolver = context.contentResolver
++                val uris =
++                    listOf(
++                        LineageSettings.System.getUriFor(
++                            LineageSettings.System.STATUS_BAR_BATTERY_STYLE
++                        ),
++                        LineageSettings.System.getUriFor(
++                            LineageSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT
++                        ),
++                    )
++
++                fun readMode(): Int {
++                    val iconStyle =
++                        LineageSettings.System.getIntForUser(
++                            resolver,
++                            LineageSettings.System.STATUS_BAR_BATTERY_STYLE,
++                            BatteryRepository.ICON_STYLE_DEFAULT,
++                            UserHandle.USER_CURRENT,
++                        )
++                    return if (iconStyle == BatteryRepository.ICON_STYLE_TEXT) {
++                        BatteryRepository.SHOW_PERCENT_NEXT_TO
++                    } else {
++                        LineageSettings.System.getIntForUser(
++                            resolver,
++                            LineageSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
++                            BatteryRepository.SHOW_PERCENT_HIDDEN,
++                            UserHandle.USER_CURRENT,
++                        )
++                    }
++                }
++
++                val observer =
++                    object : ContentObserver(Handler(Looper.getMainLooper())) {
++                        override fun onChange(selfChange: Boolean) {
++                            trySend(readMode())
++                        }
++                    }
++
++                for (uri in uris) {
++                    resolver.registerContentObserver(
++                        uri,
++                        /* notifyForDescendants = */ false,
++                        observer,
++                        UserHandle.USER_ALL,
++                    )
++                }
++
++                // Emit current value immediately
++                trySend(readMode())
++
++                awaitClose { resolver.unregisterContentObserver(observer) }
++            }
+             .flowOn(bgDispatcher)
+             .distinctUntilChanged()
+             .logDiffsForTable(
+                 tableLogBuffer = tableLog,
+                 columnName = COL_SHOW_PERCENT_SETTING,
+-                initialValue = default,
++                initialValue = BatteryRepository.SHOW_PERCENT_HIDDEN,
++            )
++            .stateIn(
++                scope = scope,
++                started = SharingStarted.Lazily,
++                initialValue = BatteryRepository.SHOW_PERCENT_HIDDEN,
+             )
+-            .stateIn(scope, SharingStarted.Lazily, default)
+-    }
+ 
+     /** Get and re-fetch the estimate every 2 minutes while active */
+     private val estimate: Flow<String?> = flow {
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/domain/interactor/BatteryInteractor.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/domain/interactor/BatteryInteractor.kt
+index 86459e610..239124482 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/domain/interactor/BatteryInteractor.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/domain/interactor/BatteryInteractor.kt
+@@ -17,15 +17,23 @@
+ package com.android.systemui.statusbar.pipeline.battery.domain.interactor
+ 
+ import com.android.systemui.dagger.SysUISingleton
++import com.android.systemui.dagger.qualifiers.Background
+ import com.android.systemui.statusbar.pipeline.battery.data.repository.BatteryRepository
+ import javax.inject.Inject
++import kotlinx.coroutines.CoroutineScope
+ import kotlinx.coroutines.ExperimentalCoroutinesApi
++import kotlinx.coroutines.flow.SharingStarted
++import kotlinx.coroutines.flow.StateFlow
+ import kotlinx.coroutines.flow.combine
+ import kotlinx.coroutines.flow.map
++import kotlinx.coroutines.flow.stateIn
+ 
+ @OptIn(ExperimentalCoroutinesApi::class)
+ @SysUISingleton
+-class BatteryInteractor @Inject constructor(repo: BatteryRepository) {
++class BatteryInteractor @Inject constructor(
++    private val repo: BatteryRepository,
++    @Background private val appScope: CoroutineScope,
++) {
+     /** The current level in the range of [0-100], or null if we don't know the level yet */
+     val level =
+         combine(repo.isStateUnknown, repo.level) { unknown, level ->
+@@ -71,8 +79,23 @@ class BatteryInteractor @Inject constructor(repo: BatteryRepository) {
+     /** @see [BatteryRepository.isPowerSaveEnabled] */
+     val powerSave = repo.isPowerSaveEnabled
+ 
+-    /** @see [BatteryRepository.isShowBatteryPercentSettingEnabled] */
+-    val isBatteryPercentSettingEnabled = repo.isShowBatteryPercentSettingEnabled
++    /** @see [BatteryRepository.batteryIconStyle] */
++    val batteryIconStyle: StateFlow<Int> = repo.batteryIconStyle
++
++    /** @see [BatteryRepository.showBatteryPercentMode] */
++    val showBatteryPercentMode: StateFlow<Int> = repo.showBatteryPercentMode
++
++    // Mode == 1
++    val showPercentInsideIcon: StateFlow<Boolean> =
++        repo.showBatteryPercentMode
++            .map { it == BatteryRepository.SHOW_PERCENT_INSIDE }
++            .stateIn(appScope, SharingStarted.Lazily, false)
++
++    // Mode == 2
++    val showPercentNextToIcon: StateFlow<Boolean> =
++        repo.showBatteryPercentMode
++            .map { it == BatteryRepository.SHOW_PERCENT_NEXT_TO }
++            .stateIn(appScope, SharingStarted.Lazily, false)
+ 
+     /**
+      * The battery attribution (@see [BatteryAttributionModel]) describes the attribution that best
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/binder/UnifiedBatteryViewBinder.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/binder/UnifiedBatteryViewBinder.kt
+index 7deddf971..59890d912 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/binder/UnifiedBatteryViewBinder.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/binder/UnifiedBatteryViewBinder.kt
+@@ -16,7 +16,6 @@
+ 
+ package com.android.systemui.statusbar.pipeline.battery.ui.binder
+ 
+-import androidx.compose.foundation.layout.height
+ import androidx.compose.foundation.layout.wrapContentWidth
+ import androidx.compose.runtime.getValue
+ import androidx.compose.ui.Modifier
+@@ -34,7 +33,7 @@ import com.android.systemui.lifecycle.rememberViewModel
+ import com.android.systemui.lifecycle.repeatWhenAttached
+ import com.android.systemui.scene.shared.flag.SceneContainerFlag
+ import com.android.systemui.statusbar.phone.domain.interactor.IsAreaDark
+-import com.android.systemui.statusbar.pipeline.battery.ui.composable.UnifiedBattery
++import com.android.systemui.statusbar.pipeline.battery.ui.composable.BatteryWithPercent
+ import com.android.systemui.statusbar.pipeline.battery.ui.viewmodel.BatteryViewModel
+ import kotlinx.coroutines.flow.Flow
+ 
+@@ -66,18 +65,14 @@ object UnifiedBatteryViewBinder {
+                                 }
+                             val isDark by
+                                 isAreaDark.collectAsStateWithLifecycle(IsAreaDark { true })
+-                            val height =
+-                                with(LocalDensity.current) {
+-                                    BatteryViewModel.getStatusBarBatteryHeight(LocalContext.current)
+-                                        .toDp()
+-                                }
+-                            UnifiedBattery(
++                            BatteryWithPercent(
+                                 modifier =
+-                                    Modifier.height(height)
++                                    Modifier
+                                         .wrapContentWidth()
+                                         .sysuiResTag(BatteryViewModel.TEST_TAG),
+                                 viewModel = viewModel,
+                                 isDarkProvider = { isDark },
++                                showPercent = viewModel.isBatteryPercentSettingEnabled,
+                             )
+                         }
+                     }
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/BatteryWithEstimate.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/BatteryWithEstimate.kt
+index c14350206..ed1ac1624 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/BatteryWithEstimate.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/BatteryWithEstimate.kt
+@@ -16,18 +16,9 @@
+ 
+ package com.android.systemui.statusbar.pipeline.battery.ui.composable
+ 
+-import androidx.compose.foundation.basicMarquee
+-import androidx.compose.foundation.layout.Arrangement
+-import androidx.compose.foundation.layout.Row
+-import androidx.compose.foundation.layout.height
+-import androidx.compose.material3.Text
+ import androidx.compose.runtime.Composable
+-import androidx.compose.ui.Alignment
+ import androidx.compose.ui.Modifier
+ import androidx.compose.ui.graphics.Color
+-import androidx.compose.ui.platform.LocalContext
+-import androidx.compose.ui.platform.LocalDensity
+-import androidx.compose.ui.unit.dp
+ import com.android.systemui.lifecycle.rememberViewModel
+ import com.android.systemui.statusbar.phone.domain.interactor.IsAreaDark
+ import com.android.systemui.statusbar.pipeline.battery.ui.viewmodel.BatteryViewModel
+@@ -44,33 +35,13 @@ fun BatteryWithEstimate(
+     val viewModel =
+         rememberViewModel(traceName = "BatteryWithEstimate") { viewModelFactory.create() }
+ 
+-    val batteryHeight =
+-        with(LocalDensity.current) {
+-            BatteryViewModel.getStatusBarBatteryHeight(LocalContext.current).toDp()
+-        }
+-
+-    Row(
++    BatteryWithPercent(
++        viewModel = viewModel,
++        isDarkProvider = isDarkProvider,
+         modifier = modifier,
+-        horizontalArrangement = Arrangement.spacedBy(4.dp),
+-        verticalAlignment = Alignment.CenterVertically,
+-    ) {
+-        if (showIcon) {
+-            UnifiedBattery(
+-                viewModel = viewModel,
+-                isDarkProvider = isDarkProvider,
+-                modifier = Modifier.height(batteryHeight).align(Alignment.CenterVertically),
+-            )
+-        }
+-        if (showEstimate) {
+-            viewModel.batteryTimeRemainingEstimate?.let {
+-                Text(
+-                    text = it,
+-                    color = textColor,
+-                    style = BatteryViewModel.getStatusBarBatteryTextStyle(LocalContext.current),
+-                    maxLines = 1,
+-                    modifier = Modifier.basicMarquee(iterations = 1),
+-                )
+-            }
+-        }
+-    }
++        showIcon = showIcon,
++        textColor = textColor,
++        showPercent = viewModel.isBatteryPercentSettingEnabled,
++        showEstimate = showEstimate,
++    )
+ }
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/BatteryWithPercent.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/BatteryWithPercent.kt
+new file mode 100644
+index 000000000..6b2c76dd9
+--- /dev/null
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/BatteryWithPercent.kt
+@@ -0,0 +1,115 @@
++/*
++ * Copyright (C) 2025 crDroid Android Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package com.android.systemui.statusbar.pipeline.battery.ui.composable
++
++import android.graphics.Rect
++import androidx.compose.foundation.basicMarquee
++import androidx.compose.foundation.layout.Arrangement
++import androidx.compose.foundation.layout.Row
++import androidx.compose.foundation.layout.height
++import androidx.compose.foundation.layout.wrapContentWidth
++import androidx.compose.foundation.text.BasicText
++import androidx.compose.runtime.Composable
++import androidx.compose.runtime.getValue
++import androidx.compose.runtime.mutableStateOf
++import androidx.compose.runtime.remember
++import androidx.compose.runtime.setValue
++import androidx.compose.ui.Alignment
++import androidx.compose.ui.Modifier
++import androidx.compose.ui.graphics.Color
++import androidx.compose.ui.layout.onLayoutRectChanged
++import androidx.compose.ui.platform.LocalContext
++import androidx.compose.ui.platform.LocalDensity
++import androidx.compose.ui.unit.dp
++import com.android.systemui.statusbar.phone.domain.interactor.IsAreaDark
++import com.android.systemui.statusbar.pipeline.battery.data.repository.BatteryRepository
++import com.android.systemui.statusbar.pipeline.battery.shared.ui.BatteryColors
++import com.android.systemui.statusbar.pipeline.battery.ui.viewmodel.BatteryViewModel
++
++@Composable
++fun BatteryWithPercent(
++    viewModel: BatteryViewModel,
++    isDarkProvider: () -> IsAreaDark,
++    modifier: Modifier = Modifier,
++    showIcon: Boolean = true,
++    textColor: Color = Color.Unspecified,
++    showPercent: Boolean = true,
++    showEstimate: Boolean = false,
++) {
++    val batteryHeight =
++        with(LocalDensity.current) {
++            BatteryViewModel.getStatusBarBatteryHeight(LocalContext.current).toDp()
++        }
++
++    val textStyle =
++        with(LocalDensity.current) {
++            BatteryViewModel.getStatusBarBatteryTextStyle(LocalContext.current)
++        }
++
++    var bounds by remember { mutableStateOf(Rect()) }
++
++    val colorProducer = {
++        if (textColor != Color.Unspecified) {
++            textColor
++        } else if (isDarkProvider().isDarkTheme(bounds)) {
++            BatteryColors.DarkTheme.Default.fill
++        } else {
++            BatteryColors.LightTheme.Default.fill
++        }
++    }
++
++    Row(
++        modifier =
++            modifier.wrapContentWidth().onLayoutRectChanged { relativeLayoutBounds ->
++                bounds =
++                    with(relativeLayoutBounds.boundsInScreen) { Rect(left, top, right, bottom) }
++            },
++        horizontalArrangement = Arrangement.spacedBy(4.dp),
++        verticalAlignment = Alignment.CenterVertically,
++    ) {
++        if (showIcon && viewModel.batteryIconStyle != BatteryRepository.ICON_STYLE_TEXT) {
++            UnifiedBattery(
++                viewModel = viewModel,
++                isDarkProvider = isDarkProvider,
++                modifier = Modifier.height(batteryHeight).wrapContentWidth(),
++            )
++        }
++
++        if (showPercent) {
++            viewModel.batteryPercent?.let {
++                BasicText(
++                    text = it,
++                    color = colorProducer,
++                    style = textStyle,
++                    maxLines = 1,
++                )
++            }
++        }
++
++        if (showEstimate) {
++            viewModel.batteryTimeRemainingEstimate?.let {
++                BasicText(
++                    text = it,
++                    color = colorProducer,
++                    style = textStyle,
++                    maxLines = 1,
++                    modifier = Modifier.basicMarquee(iterations = 1),
++                )
++            }
++        }
++    }
++}
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/UnifiedBattery.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/UnifiedBattery.kt
+index f1a61333a..d0e9109b9 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/UnifiedBattery.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/composable/UnifiedBattery.kt
+@@ -33,10 +33,12 @@ import androidx.compose.ui.geometry.Size
+ import androidx.compose.ui.graphics.BlendMode
+ import androidx.compose.ui.graphics.Color
+ import androidx.compose.ui.graphics.CompositingStrategy
++import androidx.compose.ui.graphics.PathEffect
+ import androidx.compose.ui.graphics.drawscope.Stroke
+ import androidx.compose.ui.graphics.drawscope.clipRect
+ import androidx.compose.ui.graphics.drawscope.inset
+ import androidx.compose.ui.graphics.drawscope.scale
++import androidx.compose.ui.graphics.drawscope.withTransform
+ import androidx.compose.ui.graphics.graphicsLayer
+ import androidx.compose.ui.layout.Layout
+ import androidx.compose.ui.layout.Measurable
+@@ -47,13 +49,18 @@ import androidx.compose.ui.layout.Placeable
+ import androidx.compose.ui.layout.layoutId
+ import androidx.compose.ui.layout.onLayoutRectChanged
+ import androidx.compose.ui.platform.LocalLayoutDirection
++import androidx.compose.ui.text.TextStyle
++import androidx.compose.ui.text.drawText
++import androidx.compose.ui.text.font.FontWeight
++import androidx.compose.ui.text.rememberTextMeasurer
+ import androidx.compose.ui.unit.Constraints
+ import androidx.compose.ui.unit.LayoutDirection
+-import androidx.compose.ui.util.fastFirst
++import androidx.compose.ui.unit.sp
+ import androidx.compose.ui.util.fastFirstOrNull
+ import com.android.systemui.common.ui.compose.load
+ import com.android.systemui.compose.modifiers.sysuiResTag
+ import com.android.systemui.statusbar.phone.domain.interactor.IsAreaDark
++import com.android.systemui.statusbar.pipeline.battery.data.repository.BatteryRepository
+ import com.android.systemui.statusbar.pipeline.battery.shared.ui.BatteryColors
+ import com.android.systemui.statusbar.pipeline.battery.shared.ui.BatteryFrame
+ import com.android.systemui.statusbar.pipeline.battery.shared.ui.BatteryGlyph
+@@ -179,7 +186,9 @@ fun UnifiedBattery(
+ 
+     BatteryLayout(
+         attribution = viewModel.attribution,
++        iconStyleProvider = { viewModel.batteryIconStyle },
+         levelProvider = { viewModel.level },
++        showLevelProvider = { viewModel.isBatteryPercentInsideIconSettingEnabled },
+         isFullProvider = { viewModel.isFull },
+         glyphsProvider = { viewModel.glyphList },
+         colorsProvider = colorProvider,
+@@ -196,7 +205,9 @@ fun UnifiedBattery(
+ @Composable
+ fun BatteryLayout(
+     attribution: BatteryGlyph?,
++    iconStyleProvider: () -> Int,
+     levelProvider: () -> Int?,
++    showLevelProvider: () -> Boolean,
+     isFullProvider: () -> Boolean,
+     glyphsProvider: () -> List<BatteryGlyph>,
+     colorsProvider: () -> BatteryColors,
+@@ -205,31 +216,50 @@ fun BatteryLayout(
+ ) {
+     Layout(
+         content = {
+-            BatteryBody(
+-                pathSpec = BatteryFrame.bodyPathSpec,
+-                levelProvider = levelProvider,
+-                glyphsProvider = glyphsProvider,
+-                isFullProvider = isFullProvider,
+-                colorsProvider = colorsProvider,
+-                modifier = Modifier.layoutId(BatteryMeasurePolicy.LayoutId.Frame),
+-                contentDescription = contentDescription,
+-            )
+-            if (attribution != null) {
+-                BatteryAttribution(
++            val iconStyle = iconStyleProvider()
++
++            if (
++                iconStyle == BatteryRepository.ICON_STYLE_CIRCLE ||
++                    iconStyle == BatteryRepository.ICON_STYLE_CIRCLE_DOTTED
++            ) {
++                CircleBatteryBody(
+                     attr = attribution,
++                    iconStyleProvider = iconStyleProvider,
++                    levelProvider = levelProvider,
++                    showLevelProvider = showLevelProvider,
+                     colorsProvider = colorsProvider,
+-                    modifier =
+-                        Modifier.layoutId(
+-                            BatteryMeasurePolicy.LayoutId.Attribution(wrapped = attribution)
+-                        ),
++                    modifier = Modifier.layoutId(BatteryMeasurePolicy.LayoutId.FrameCircle),
++                    contentDescription = contentDescription,
+                 )
++            } else if (iconStyle == BatteryRepository.ICON_STYLE_TEXT) {
++                // Empty on purpose
+             } else {
+-                BatteryCap(
+-                    colorsProvider = colorsProvider,
+-                    isFullProvider = isFullProvider,
++                BatteryBody(
++                    pathSpec = BatteryFrame.bodyPathSpec,
++                    levelProvider = levelProvider,
+                     glyphsProvider = glyphsProvider,
+-                    modifier = Modifier.layoutId(BatteryMeasurePolicy.LayoutId.Cap),
++                    isFullProvider = isFullProvider,
++                    colorsProvider = colorsProvider,
++                    modifier = Modifier.layoutId(BatteryMeasurePolicy.LayoutId.Frame),
++                    contentDescription = contentDescription,
+                 )
++                if (attribution != null) {
++                    BatteryAttribution(
++                        attr = attribution,
++                        colorsProvider = colorsProvider,
++                        modifier =
++                            Modifier.layoutId(
++                                BatteryMeasurePolicy.LayoutId.Attribution(wrapped = attribution)
++                            ),
++                    )
++                } else {
++                    BatteryCap(
++                        colorsProvider = colorsProvider,
++                        isFullProvider = isFullProvider,
++                        glyphsProvider = glyphsProvider,
++                        modifier = Modifier.layoutId(BatteryMeasurePolicy.LayoutId.Cap),
++                    )
++                }
+             }
+         },
+         measurePolicy = BatteryMeasurePolicy(),
+@@ -242,6 +272,8 @@ class BatteryMeasurePolicy : MeasurePolicy {
+     sealed class LayoutId {
+         data object Frame : LayoutId()
+ 
++        data object FrameCircle : LayoutId()
++
+         data object Cap : LayoutId()
+ 
+         // We don't have to depend on the whole [BatteryGlyph] here, we just need to know the
+@@ -253,7 +285,10 @@ class BatteryMeasurePolicy : MeasurePolicy {
+         measurables: List<Measurable>,
+         constraints: Constraints,
+     ): MeasureResult {
+-        val batteryFrame = measurables.fastFirst { it.layoutId == LayoutId.Frame }
++        val batteryFrame =
++            measurables.fastFirstOrNull {
++                it.layoutId == LayoutId.Frame || it.layoutId == LayoutId.FrameCircle
++            } ?: return layout(0, 0) {}
+ 
+         // We will scale the entire battery icon based on the given height
+         val scale = constraints.maxHeight / BatteryFrame.innerHeight
+@@ -263,8 +298,18 @@ class BatteryMeasurePolicy : MeasurePolicy {
+             batteryFrame.measure(
+                 constraints =
+                     constraints.copy(
+-                        minWidth = batterySize.width.roundToInt(),
+-                        maxWidth = batterySize.width.roundToInt(),
++                        minWidth =
++                            if (batteryFrame.layoutId == LayoutId.FrameCircle) {
++                                batterySize.height.roundToInt()
++                            } else {
++                                batterySize.width.roundToInt()
++                            },
++                        maxWidth =
++                            if (batteryFrame.layoutId == LayoutId.FrameCircle) {
++                                batterySize.height.roundToInt()
++                            } else {
++                                batterySize.width.roundToInt()
++                            },
+                         minHeight = batterySize.height.roundToInt(),
+                         maxHeight = batterySize.height.roundToInt(),
+                     )
+@@ -372,6 +417,99 @@ class BatteryMeasurePolicy : MeasurePolicy {
+     }
+ }
+ 
++@Composable
++fun CircleBatteryBody(
++    attr: BatteryGlyph?,
++    iconStyleProvider: () -> Int,
++    levelProvider: () -> Int?,
++    showLevelProvider: () -> Boolean,
++    colorsProvider: () -> BatteryColors,
++    modifier: Modifier = Modifier,
++    contentDescription: String = "",
++) {
++    val textMeasurer = rememberTextMeasurer()
++
++    Canvas(modifier = modifier, contentDescription = contentDescription) {
++        val iconStyle = iconStyleProvider()
++        val level = levelProvider()
++        val showLevel = showLevelProvider()
++        val colors = colorsProvider()
++
++        val strokeWidth = size.height / 6.5f
++        val radius = size.height / 2f - strokeWidth / 2f
++        val center = Offset(size.width / 2, size.height / 2)
++
++        // Draw thin gray ring first
++        drawCircle(colors.backgroundOnly, radius, center, style = Stroke(strokeWidth))
++
++        // Draw colored arc representing charge level
++        if (level != null && level > 0) {
++            drawArc(
++                colors.attribution,
++                270f,
++                3.6f * level,
++                useCenter = false,
++                topLeft = Offset(center.x - radius, center.y - radius),
++                size = Size(radius * 2, radius * 2),
++                style =
++                    Stroke(
++                        strokeWidth,
++                        pathEffect =
++                            if (iconStyle == BatteryRepository.ICON_STYLE_CIRCLE_DOTTED) {
++                                PathEffect.dashPathEffect(floatArrayOf(3f, 2f), 0f)
++                            } else {
++                                null
++                            },
++                    ),
++            )
++        }
++
++        if (attr != null) {
++            // Draw attribution
++            inset(strokeWidth * 2f) {
++                val attrScale = attr.scaleTo(size.width, size.height)
++                val pathBounds = attr.path.getBounds()
++                withTransform({
++                    scale(attrScale, Offset.Zero)
++                    translate(
++                        (size.width - (pathBounds.width * attrScale)) / 2f,
++                        (size.height - (pathBounds.height * attrScale)) / 2f,
++                    )
++                }) {
++                    drawPath(
++                        path = attr.path,
++                        color = Color.Black,
++                        style = Stroke(2f),
++                        blendMode = BlendMode.Clear,
++                    )
++                    drawPath(attr.path, colors.attribution)
++                }
++            }
++        } else if (showLevel && level != null && level < 100) {
++            // Draw charge level
++            val textLayoutResult =
++                textMeasurer.measure(
++                    text = level.toString(),
++                    style =
++                        TextStyle(
++                            color = colors.attribution,
++                            fontSize = 6.sp,
++                            fontWeight = FontWeight.Bold,
++                        ),
++                )
++
++            drawText(
++                textLayoutResult = textLayoutResult,
++                topLeft =
++                    Offset(
++                        size.width / 2 - textLayoutResult.size.width / 2f,
++                        size.height / 2 - textLayoutResult.size.height / 2f,
++                    ),
++            )
++        }
++    }
++}
++
+ /**
+  * Draws just the round-rect piece of the battery frame. If [glyphsProvider] is non-empty, then this
+  * composable also renders the glyphs centered in the frame.
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/viewmodel/BatteryViewModel.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/viewmodel/BatteryViewModel.kt
+index 5c9cc0410..a7ab865a9 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/viewmodel/BatteryViewModel.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/battery/ui/viewmodel/BatteryViewModel.kt
+@@ -28,6 +28,7 @@ import com.android.systemui.common.shared.model.ContentDescription
+ import com.android.systemui.dagger.qualifiers.Application
+ import com.android.systemui.lifecycle.HydratedActivatable
+ import com.android.systemui.res.R
++import com.android.systemui.statusbar.pipeline.battery.data.repository.BatteryRepository
+ import com.android.systemui.statusbar.pipeline.battery.domain.interactor.BatteryAttributionModel.Charging
+ import com.android.systemui.statusbar.pipeline.battery.domain.interactor.BatteryAttributionModel.Defend
+ import com.android.systemui.statusbar.pipeline.battery.domain.interactor.BatteryAttributionModel.PowerSave
+@@ -35,6 +36,7 @@ import com.android.systemui.statusbar.pipeline.battery.domain.interactor.Battery
+ import com.android.systemui.statusbar.pipeline.battery.domain.interactor.BatteryInteractor
+ import com.android.systemui.statusbar.pipeline.battery.shared.ui.BatteryColors
+ import com.android.systemui.statusbar.pipeline.battery.shared.ui.BatteryGlyph
++import java.text.NumberFormat
+ import dagger.assisted.AssistedFactory
+ import dagger.assisted.AssistedInject
+ import kotlinx.coroutines.ExperimentalCoroutinesApi
+@@ -57,6 +59,12 @@ sealed class BatteryViewModel(
+ 
+     val isCharging: Boolean by interactor.isCharging.hydratedStateOf(initialValue = false)
+ 
++    val isBatteryPercentSettingEnabled: Boolean by
++        interactor.showPercentNextToIcon.hydratedStateOf(initialValue = false)
++
++    val isBatteryPercentInsideIconSettingEnabled: Boolean by
++        interactor.showPercentInsideIcon.hydratedStateOf(traceName = "isBatteryPercentInsideIconSettingEnabled", initialValue = interactor.showPercentInsideIcon.value)
++
+     /** A [List<BatteryGlyph>] representation of the current [level] */
+     private val levelGlyphs: Flow<List<BatteryGlyph>> =
+         interactor.level.map { it?.glyphRepresentation() ?: emptyList() }
+@@ -172,6 +180,9 @@ sealed class BatteryViewModel(
+             }
+             .hydratedStateOf(initialValue = ContentDescription.Loaded(null))
+ 
++    val batteryIconStyle: Int by
++        interactor.batteryIconStyle.hydratedStateOf(traceName = "batteryIconStyle", initialValue = BatteryRepository.ICON_STYLE_DEFAULT)
++
+     /** For use in the shade, where we might need to show an estimate */
+     val batteryTimeRemainingEstimate: String? by
+         interactor.isCharging
+@@ -184,6 +195,11 @@ sealed class BatteryViewModel(
+             }
+             .hydratedStateOf(traceName = "timeRemainingEstimate", initialValue = null)
+ 
++    val batteryPercent: String? by
++        interactor.level.map { level ->
++            level?.let { NumberFormat.getPercentInstance().format(it / 100f) }
++        }.hydratedStateOf(initialValue = null)
++
+     /** Base factory class so implementations can take any kind of view model */
+     interface Factory {
+         fun create(): BatteryViewModel
+@@ -195,7 +211,7 @@ sealed class BatteryViewModel(
+     constructor(interactor: BatteryInteractor, @Application context: Context) :
+         BatteryViewModel(
+             interactor = interactor,
+-            shouldShowPercent = interactor.isBatteryPercentSettingEnabled,
++            shouldShowPercent = interactor.showPercentInsideIcon,
+             context = context,
+         ) {
+ 
+@@ -215,7 +231,7 @@ sealed class BatteryViewModel(
+         BatteryViewModel(
+             interactor = interactor,
+             shouldShowPercent =
+-                combine(interactor.isCharging, interactor.isBatteryPercentSettingEnabled) {
++                combine(interactor.isCharging, interactor.showPercentNextToIcon) {
+                     charging,
+                     settingEnabled ->
+                     charging || settingEnabled
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/shared/ui/binder/HomeStatusBarViewBinder.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/shared/ui/binder/HomeStatusBarViewBinder.kt
+index 8ece7f069..b02c9cf2f 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/shared/ui/binder/HomeStatusBarViewBinder.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/shared/ui/binder/HomeStatusBarViewBinder.kt
+@@ -19,6 +19,20 @@ package com.android.systemui.statusbar.pipeline.shared.ui.binder
+ import android.animation.Animator
+ import android.animation.AnimatorListenerAdapter
+ import android.view.View
++import android.app.ActivityManager
++import android.app.WindowConfiguration
++import com.android.systemui.shared.system.ActivityManagerWrapper
++import com.android.systemui.shared.system.TaskStackChangeListener
++import com.android.systemui.shared.system.TaskStackChangeListeners
++import android.database.ContentObserver
++import android.os.Handler
++import android.os.Looper
++import android.os.UserHandle
++import android.provider.Settings
++import com.android.systemui.statusbar.phone.ui.StatusBarIconController
++import lineageos.providers.LineageSettings
++import kotlinx.coroutines.flow.MutableStateFlow
++import kotlinx.coroutines.flow.combine
+ import androidx.core.view.isVisible
+ import androidx.lifecycle.Lifecycle
+ import androidx.lifecycle.repeatOnLifecycle
+@@ -78,6 +92,10 @@ class HomeStatusBarViewBinderImpl @Inject constructor() : HomeStatusBarViewBinde
+         // GONE because this shouldn't take space in the layout
+         systemInfoView.hideInitially()
+         clockView.hideInitially()
++        val centerClock = view.requireViewById<View>(R.id.clock_center)
++        val rightClock = view.requireViewById<View>(R.id.clock_right)
++        centerClock.hideInitially()
++        rightClock.hideInitially()
+         notificationIconsArea.hideInitially()
+ 
+         view.repeatWhenAttached {
+@@ -141,7 +159,84 @@ class HomeStatusBarViewBinderImpl @Inject constructor() : HomeStatusBarViewBinde
+                 }
+ 
+                 if (!ClockModernization.isEnabled) {
+-                    launch { viewModel.isClockVisible.collect { clockView.adjustVisibility(it) } }
++                    launch {
++                        val resolver = view.context.contentResolver
++                        fun readSettings(): Triple<Int, Boolean, Boolean> {
++                            val position = LineageSettings.System.getIntForUser(
++                                resolver, LineageSettings.System.STATUS_BAR_CLOCK,
++                                2, UserHandle.USER_CURRENT,
++                            )
++                            val hidden = StatusBarIconController.getIconHideList(
++                                view.context,
++                                Settings.Secure.getStringForUser(
++                                    resolver, StatusBarIconController.ICON_HIDE_LIST,
++                                    UserHandle.USER_CURRENT,
++                                ),
++                            ).contains("clock")
++                            val autoHide = LineageSettings.System.getIntForUser(
++                                resolver, LineageSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE,
++                                0, UserHandle.USER_CURRENT,
++                            ) != 0
++                            return Triple(position, hidden, autoHide)
++                        }
++                        val settings = MutableStateFlow(readSettings())
++                        fun launcherVisible(): Boolean {
++                            val task = ActivityManagerWrapper.getInstance().runningTask
++                            return task != null && task.displayId == displayId &&
++                                task.activityType == WindowConfiguration.ACTIVITY_TYPE_HOME
++                        }
++                        val launcher = MutableStateFlow(launcherVisible())
++                        val taskListener = object : TaskStackChangeListener {
++                            override fun onTaskStackChanged() {
++                                launcher.value = launcherVisible()
++                            }
++                            override fun onTaskMovedToFront(taskInfo: ActivityManager.RunningTaskInfo) {
++                                if (taskInfo.displayId == displayId) {
++                                    launcher.value = taskInfo.activityType == WindowConfiguration.ACTIVITY_TYPE_HOME
++                                }
++                            }
++                        }
++                        val taskListeners = TaskStackChangeListeners.getInstance()
++                        val observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
++                            override fun onChange(selfChange: Boolean) {
++                                settings.value = readSettings()
++                            }
++                        }
++                        val uris = listOf(
++                            LineageSettings.System.getUriFor(LineageSettings.System.STATUS_BAR_CLOCK),
++                            Settings.Secure.getUriFor(StatusBarIconController.ICON_HIDE_LIST),
++                            LineageSettings.System.getUriFor(LineageSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE),
++                        )
++                        try {
++                            taskListeners.registerTaskStackListener(taskListener)
++                            launcher.value = launcherVisible()
++                            uris.forEach {
++                                resolver.registerContentObserver(it, false, observer, UserHandle.USER_ALL)
++                            }
++                            settings.value = readSettings()
++                            combine(viewModel.isClockVisible, settings, launcher) { visibility, prefs, home ->
++                                Triple(visibility, prefs, home)
++                            }.collect { (visibility, prefs, home) ->
++                                val (position, hidden, autoHide) = prefs
++                                val active = when (position) {
++                                    0 -> rightClock
++                                    1 -> centerClock
++                                    else -> clockView
++                                }
++                                listOf(clockView, centerClock, rightClock).forEach { clock ->
++                                    clock.animate().cancel()
++                                    if (clock == active && !hidden && !(autoHide && home)) {
++                                        clock.adjustVisibility(visibility)
++                                    } else {
++                                        clock.visibility = View.GONE
++                                    }
++                                }
++                            }
++                        } finally {
++                            resolver.unregisterContentObserver(observer)
++                            taskListeners.unregisterTaskStackListener(taskListener)
++                        }
++                    }
+                 }
+ 
+                 launch {
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/shared/ui/composable/StatusBarRoot.kt b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/shared/ui/composable/StatusBarRoot.kt
+index 013eae5ed..a0da6e3f0 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/shared/ui/composable/StatusBarRoot.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/pipeline/shared/ui/composable/StatusBarRoot.kt
+@@ -102,6 +102,7 @@ import com.android.systemui.statusbar.notification.icon.ui.viewbinder.ConnectedD
+ import com.android.systemui.statusbar.notification.icon.ui.viewbinder.NotificationIconContainerStatusBarViewBinder
+ import com.android.systemui.statusbar.notification.icon.ui.viewbinder.NotificationIconContainerViewBinder
+ import com.android.systemui.statusbar.notification.shared.StatusBarHeadline
++import com.android.systemui.statusbar.phone.NetworkTrafficView
+ import com.android.systemui.statusbar.phone.NotificationIconContainer
+ import com.android.systemui.statusbar.phone.PhoneStatusBarView
+ import com.android.systemui.statusbar.phone.StatusBarLocation
+@@ -110,7 +111,7 @@ import com.android.systemui.statusbar.phone.domain.interactor.IsAreaDark
+ import com.android.systemui.statusbar.phone.ui.DarkIconManager
+ import com.android.systemui.statusbar.phone.ui.StatusBarIconController
+ import com.android.systemui.statusbar.phone.ui.TintedIconManager
+-import com.android.systemui.statusbar.pipeline.battery.ui.composable.UnifiedBattery
++import com.android.systemui.statusbar.pipeline.battery.ui.composable.BatteryWithPercent
+ import com.android.systemui.statusbar.pipeline.battery.ui.viewmodel.BatteryViewModel
+ import com.android.systemui.statusbar.pipeline.shared.ui.binder.HomeStatusBarIconBlockListBinder
+ import com.android.systemui.statusbar.pipeline.shared.ui.binder.HomeStatusBarTouchExclusionRegionBinder
+@@ -341,6 +342,27 @@ fun StatusBarRoot(
+                     eventAnimationInteractor::animateStatusBarContentForChipExit,
+                     listener = null,
+                 )
++                // Both positions share the SDK settings observer and traffic measurement logic.
++                phoneStatusBarView.requireViewById<LinearLayout>(
++                    R.id.status_bar_start_side_except_heads_up
++                ).addView(
++                    NetworkTrafficView(context, 0, darkIconDispatcher),
++                    0,
++                    LinearLayout.LayoutParams(
++                        ViewGroup.LayoutParams.WRAP_CONTENT,
++                        ViewGroup.LayoutParams.MATCH_PARENT,
++                    ),
++                )
++                phoneStatusBarView.requireViewById<LinearLayout>(
++                    R.id.status_bar_end_side_content
++                ).addView(
++                    NetworkTrafficView(context, 2, darkIconDispatcher),
++                    0,
++                    LinearLayout.LayoutParams(
++                        ViewGroup.LayoutParams.WRAP_CONTENT,
++                        ViewGroup.LayoutParams.MATCH_PARENT,
++                    ),
++                )
+                 onViewCreated(phoneStatusBarView)
+                 phoneStatusBarView
+             },
+@@ -599,9 +621,10 @@ private fun addBatteryComposable(
+                     rememberViewModel(traceName = "UnifiedBattery") {
+                         statusBarViewModel.unifiedBatteryViewModel.create()
+                     }
+-                UnifiedBattery(
+-                    modifier = Modifier.sysUiResTagContainer().height(height).wrapContentWidth(),
++                BatteryWithPercent(
++                    modifier = Modifier.sysUiResTagContainer().wrapContentWidth(),
+                     viewModel = viewModel,
++                    showPercent = viewModel.isBatteryPercentSettingEnabled,
+                     isDarkProvider = { statusBarViewModel.areaDark },
+                 )
+             }
+@@ -649,10 +672,11 @@ private fun addEndSideComposable(
+                         rememberViewModel(traceName = "UnifiedBattery") {
+                             statusBarViewModel.unifiedBatteryViewModel.create()
+                         }
+-                    UnifiedBattery(
++                    BatteryWithPercent(
+                         viewModel = viewModel,
++                    showPercent = viewModel.isBatteryPercentSettingEnabled,
+                         isDarkProvider = { statusBarViewModel.areaDark },
+-                        modifier = Modifier.height(height).wrapContentWidth(),
++                        modifier = Modifier.wrapContentWidth(),
+                     )
+                 }
+             }
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/policy/Clock.java b/packages/SystemUI/src/com/android/systemui/statusbar/policy/Clock.java
+index 5395d08ee..f2449fdb2 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/policy/Clock.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/policy/Clock.java
+@@ -19,6 +19,8 @@ package com.android.systemui.statusbar.policy;
+ import android.annotation.NonNull;
+ import android.content.BroadcastReceiver;
+ import android.content.Context;
++import android.database.ContentObserver;
++import lineageos.providers.LineageSettings;
+ import android.content.Intent;
+ import android.content.IntentFilter;
+ import android.content.pm.ActivityInfo;
+@@ -93,7 +95,7 @@ public class Clock extends TextView implements
+     private static final int AM_PM_STYLE_SMALL   = 1;
+     private static final int AM_PM_STYLE_GONE    = 2;
+ 
+-    private final int mAmPmStyle;
++    private int mAmPmStyle;
+     private boolean mShowSeconds;
+     private Handler mSecondsHandler;
+ 
+@@ -109,11 +111,29 @@ public class Clock extends TextView implements
+ 
+     private final BroadcastDispatcher mBroadcastDispatcher;
+ 
++    private final ContentObserver mAmPmObserver = new ContentObserver(new Handler()) {
++        @Override
++        public void onChange(boolean selfChange) {
++            updateAmPmStyle();
++        }
++    };
++
++    private void updateAmPmStyle() {
++        int style = LineageSettings.System.getIntForUser(mContext.getContentResolver(),
++                LineageSettings.System.STATUS_BAR_AM_PM, AM_PM_STYLE_GONE, mCurrentUserId);
++        if (style != mAmPmStyle) {
++            mAmPmStyle = style;
++            mContentDescriptionFormatString = "";
++            if (mCalendar != null) updateClock();
++        }
++    }
++
+     private final UserTracker.Callback mUserChangedCallback =
+             new UserTracker.Callback() {
+                 @Override
+                 public void onUserChanged(int newUser, @NonNull Context userContext) {
+                     mCurrentUserId = newUser;
++                    updateAmPmStyle();
+                     updateClock();
+                 }
+             };
+@@ -193,6 +213,10 @@ public class Clock extends TextView implements
+                     StatusBarIconController.ICON_HIDE_LIST);
+             mUserTracker.addCallback(mUserChangedCallback, mContext.getMainExecutor());
+             mCurrentUserId = mUserTracker.getUserId();
++            mContext.getContentResolver().registerContentObserver(
++                    LineageSettings.System.getUriFor(LineageSettings.System.STATUS_BAR_AM_PM),
++                    false, mAmPmObserver, UserHandle.USER_ALL);
++            updateAmPmStyle();
+         }
+ 
+         // The time zone may have changed while the receiver wasn't registered, so update the Time
+@@ -221,6 +245,7 @@ public class Clock extends TextView implements
+             mAttached = false;
+             Dependency.get(TunerService.class).removeTunable(this);
+             mUserTracker.removeCallback(mUserChangedCallback);
++            mContext.getContentResolver().unregisterContentObserver(mAmPmObserver);
+         }
+     }
+ 
+diff --git a/packages/SystemUI/tests/src/com/android/systemui/qs/panels/ui/QSFragmentComposeTest.kt b/packages/SystemUI/tests/src/com/android/systemui/qs/panels/ui/QSFragmentComposeTest.kt
+index ab7802968..9c0591e7c 100644
+--- a/packages/SystemUI/tests/src/com/android/systemui/qs/panels/ui/QSFragmentComposeTest.kt
++++ b/packages/SystemUI/tests/src/com/android/systemui/qs/panels/ui/QSFragmentComposeTest.kt
+@@ -49,6 +49,7 @@ class QSFragmentComposeTest : SysuiTestCase() {
+     fun portraitLayout_qqs() {
+         composeTestRule.setContent {
+             QuickQuickSettingsLayout(
++                brightness = {},
+                 tiles = { Tiles(TILES_HEIGHT_PORTRAIT) },
+                 media = { Media() },
+                 mediaInRow = false,
+@@ -70,6 +71,7 @@ class QSFragmentComposeTest : SysuiTestCase() {
+     fun landscapeLayout_qqs() {
+         composeTestRule.setContent {
+             QuickQuickSettingsLayout(
++                brightness = {},
+                 tiles = { Tiles(TILES_HEIGHT_LANDSCAPE) },
+                 media = { Media() },
+                 mediaInRow = true,
