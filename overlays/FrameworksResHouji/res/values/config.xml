@@ -397,7 +397,7 @@
     <integer name="config_brightness_ramp_rate_fast">180</integer>
 
     <!-- Slow brightness animation ramp rate in brightness units per second-->
-    <integer name="config_brightness_ramp_rate_slow">15</integer>
+    <integer name="config_brightness_ramp_rate_slow">18</integer>
 
     <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
          vendors to tune the curves to have exact same brightness for different refresh rate. So
