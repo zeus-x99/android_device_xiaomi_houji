@@ -32,6 +32,17 @@ PRODUCT_SOONG_NAMESPACES += \
 # Radio
 PRODUCT_VENDOR_PROPERTIES += ro.vendor.radio.hangup_pending_mo=true
 
+# Add an on-demand FOD wake sensor through the supplementary ODM HAL list.
+PRODUCT_PACKAGES += sensors.xiaomi.v2
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.sensors.xiaomi.udfps=true \
+    ro.vendor.sensors.xiaomi.udfps.touchfeature=true \
+    ro.vendor.sensors.xiaomi.udfps.location_x=600 \
+    ro.vendor.sensors.xiaomi.udfps.location_y=2390
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_ODM)/etc/sensors/hals.conf
+
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
