@@ -6,6 +6,7 @@
 
 import hashlib
 import struct
+from perf_config_fixup import blob_fixup_perf_storage
 
 import extract_utils.tools
 from extract_utils.fixups_blob import (
@@ -464,7 +465,12 @@ module = ExtractUtilsModule(
 )
 
 if __name__ == '__main__':
-    utils = ExtractUtils.device_with_common(
-        module, 'sm8650-common', module.vendor
-    )
+    common_module = ExtractUtils.get_module('sm8650-common', module.vendor)
+    # The current houji UFS module does not enable clock scaling. Apply this
+    # only during houji extraction; other common-tree devices keep their hints.
+    for config in ('perfboostsconfig.xml', 'perfboostselection.xml'):
+        common_module.blob_fixups[f'vendor/etc/perf/{config}'] = (
+            blob_fixup().call(blob_fixup_perf_storage)
+        )
+    utils = ExtractUtils(module, [common_module])
     utils.run()
