@@ -1,0 +1,74 @@
+cc_library_shared {
+    name: "libhouji_qsync_runtime",
+    vendor: true,
+    compile_multilib: "64",
+    ldflags: ["-Wl,-z,global"],
+    srcs: ["Runtime.cpp", "QsyncCoordinator.cpp", "QsyncServer.cpp"],
+    shared_libs: ["libdl", "liblog", "libbinder_ndk"],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}
+
+cc_library_shared {
+    name: "libhouji_qsync_client",
+    vendor: true,
+    compile_multilib: "64",
+    ldflags: ["-Wl,-z,global"],
+    srcs: ["QsyncClient.cpp"],
+    shared_libs: ["liblog", "libbinder_ndk"],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}
+
+cc_library_shared {
+    name: "libhouji_qsync_runtime_test",
+    vendor: true,
+    srcs: ["Runtime.cpp", "QsyncCoordinator.cpp"],
+    shared_libs: ["libdl", "liblog"],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror", "-DHOUJI_QSYNC_FAKE_SDM_TEST"],
+}
+
+cc_library_shared {
+    name: "libhouji_qsync_fake_sdm",
+    vendor: true,
+    srcs: ["FakeSdm.cpp"],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror", "-fsemantic-interposition"],
+}
+
+cc_binary {
+    name: "houji_qsync_runtime_test",
+    vendor: true,
+    srcs: ["RuntimeTest.cpp", "QsyncServer.cpp"],
+    shared_libs: [
+        "libdl", "liblog", "libbinder_ndk", "libhouji_qsync_fake_sdm",
+        "libhouji_qsync_runtime_test", "libhouji_qsync_client",
+    ],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror", "-DHOUJI_QSYNC_ANDROID_IPC_TEST"],
+}
+
+cc_binary {
+    name: "houji_qsync_state_test",
+    vendor: true,
+    srcs: ["QsyncCoordinator.cpp", "CoordinatorTest.cpp"],
+    cpp_std: "c++17",
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}
+
+cc_library_shared {
+    name: "libhouji_qsync_interpose_probe",
+    vendor: true,
+    srcs: ["Interpose.cpp"],
+    shared_libs: ["libdl", "liblog"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}
+
+cc_binary {
+    name: "houji_qsync_link_probe",
+    vendor: true,
+    srcs: ["LinkProbe.cpp"],
+    shared_libs: ["libdl"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}

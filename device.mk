@@ -53,3 +53,8 @@ PRODUCT_PACKAGES += \
     HoujiEuiccOverlay \
     SettingsOverlayHouji \
     SystemUIResHouji
+
+# Restore the vendor backlight QSync timer through the existing SDM implementation.
+PRODUCT_PACKAGES += \
+    libhouji_qsync_runtime \
+    libhouji_qsync_client

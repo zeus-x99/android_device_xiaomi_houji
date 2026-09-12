@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+type vendor_houji_qsync_service, service_manager_type, hal_service_type;
+
+add_service(hal_graphics_composer_default, vendor_houji_qsync_service)
+allow vendor_hal_displayfeature_xiaomi_default vendor_houji_qsync_service:service_manager find;
+binder_call(vendor_hal_displayfeature_xiaomi_default, hal_graphics_composer_default)

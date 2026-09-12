@@ -6,6 +6,7 @@
 
 import hashlib
 import struct
+from copy import deepcopy
 from perf_config_fixup import blob_fixup_perf_storage
 
 import extract_utils.tools
@@ -466,6 +467,20 @@ module = ExtractUtilsModule(
 
 if __name__ == '__main__':
     common_module = ExtractUtils.get_module('sm8650-common', module.vendor)
+    # init launches these HALs with AT_SECURE=1, so LD_PRELOAD is ignored.
+    # Add direct dependencies on global shims only for the houji product.
+    for binary, library in (
+        ('vendor/bin/hw/vendor.qti.hardware.display.composer-service',
+         'libhouji_qsync_runtime.so'),
+        ('vendor/bin/hw/vendor.xiaomi.hardware.displayfeature_aidl-service',
+         'libhouji_qsync_client.so'),
+    ):
+        fixup = deepcopy(common_module.blob_fixups.get(binary, blob_fixup()))
+        common_module.blob_fixups[binary] = fixup.add_needed(library)
+    if 'device/xiaomi/houji' not in (common_module.namespace_imports or []):
+        common_module.namespace_imports = [
+            *(common_module.namespace_imports or []), 'device/xiaomi/houji',
+        ]
     # The current houji UFS module does not enable clock scaling. Apply this
     # only during houji extraction; other common-tree devices keep their hints.
     for config in ('perfboostsconfig.xml', 'perfboostselection.xml'):
